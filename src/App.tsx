@@ -2,7 +2,8 @@ import './App.css';
 // import Counter from './components/counter/Counter';
 // import Counter2 from './components/counter2/counter2';
 // import Humans from './components/humans/humans';
-import Btn from './components/btn/btn';
+// import Btn from './components/btn/btn';
+import Buttons from './components/buttons/buttons';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <Counter />
       <Counter2 /> */}
       {/* <Humans /> */}
-      <Btn />
+      {/* <Btn /> */}
+      <Buttons />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import './Button.css';
 
 export interface ButtonProps {
     title: string;
-    handleClick: () => void;
+    handleClick: (event: any) => void;
 }
 
 const Button = ({handleClick, title}: ButtonProps) =>  (
