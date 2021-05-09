@@ -1,0 +1,34 @@
+.button {
+    background: orange;
+    border-radius: 8px;
+    color: white;
+    width: 140px;
+    height: 60px;
+    border: none;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.active {
+    background: red;
+} 
+
+.blueButton {
+    background: blue;
+}
+
+ .main {
+    display: flex;
+ }
+
+ .blackButton {
+     background: black;
+ }
+
+ .greenButton {
+    background: green;
+}
