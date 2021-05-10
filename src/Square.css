@@ -1,0 +1,14 @@
+.squareRed {
+    width: 400px;
+    height: 400px;
+    background: red;
+    margin-top: 10px;
+}
+
+.squareYellow {
+    width: 400px;
+    height: 400px;
+    background: yellow;
+    margin-top: 10px;
+}
+
