@@ -1,6 +1,6 @@
 import './Button.css';
 
-export interface ButtonProps {
+interface ButtonProps {
     title: string;
     handleClick: (event: any) => void;
 }
@@ -10,3 +10,11 @@ const Button = ({handleClick, title}: ButtonProps) =>  (
 )
 
 export default Button;
+
+
+
+// const Button = () =>  (
+//     const handleClick = () => {};
+
+//     <button className="button" onClick={handleClick}>Title</button>
+// )

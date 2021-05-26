@@ -9,7 +9,7 @@ import wallet from './wallet.svg';
 import phone from './phone.svg';
 import Card from './card';
 
-const Humans = () => {
+const Humans = ({tax, title}: {tax?: number; title?: string}) => {
    // const [isDisabled, setDisabled] = useState(true);
    const [phoneValue, setPhoneValue] = useState('');
    const [walletValue, setWalletValue] = useState('');
@@ -37,7 +37,8 @@ const Humans = () => {
    }
 
    const handleChange2 = (event: any) => {
-      setWalletValue(event.target.value);
+      const {value} = event.target;
+      setWalletValue(value);
    }
 
    // useEffect(() => {
@@ -48,7 +49,9 @@ const Humans = () => {
    
    return (
    <form className="main">
-		<h1> Пополнение счёта Humans </h1>
+		<h1> 
+         {title || 'Пополнение счёта Humans'}
+         </h1>
         <div className="inputs">
             <div className="inputBlock">
                 <input name="phone" className="input" value={phoneValue} onChange={handleChange} placeholder="Номер телефона получателя" />
@@ -74,7 +77,7 @@ const Humans = () => {
             ))}
 			</div>
 		</div>
-		<p>Комиссия 0%</p>
+		<p>{tax ? tax : 'Комиссия 0%'}</p>
       <button disabled={isDisabled} className={isDisabled ? "button" : "button active"} type="submit">Пополнить счёт</button>
 	</form>
  )
