@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import './buttons.css';
 import Button from '../button/Button';
 
@@ -18,10 +17,10 @@ const Buttons = () => {
             {titles.map((title) => (
                 <Button key={title} title={title} handleClick={handleButtonClick} />
             ))}
-            {/* <Button title="rertertert" handleClick={handleButtonClick} />
-            <Button title="rertertert" handleClick={handleButtonClick} />
-            <Button title="rertertert" handleClick={handleButtonClick} />
-            <Button title="rertertert" handleClick={handleButtonClick} /> */}
+            <Button title="1" handleClick={handleButtonClick} />
+            <Button title="2" handleClick={handleButtonClick} />
+            <Button title="3" handleClick={handleButtonClick} />
+            <Button title="4" handleClick={handleButtonClick} />
         </div>
     )
 

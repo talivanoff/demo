@@ -1,0 +1,17 @@
+.rrr {
+    margin-top: 30px;
+}
+
+.eee {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.button {
+    height: 48px;
+}
+
+.red {
+    background-color: red;
+}
