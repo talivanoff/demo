@@ -15,8 +15,8 @@ import Calc from './components/calc/calc';
 // import ButColor from './components/butColor/butColor';
 // import NokAndNod from './components/nokAndNod/nokAndNod';
 // import Reverse from './components/reverse/reverse';
-   import InputMax from './components/inputMax/inputMax';
-
+// import InputMax from './components/inputMax/inputMax';
+   import LetterInWord from './components/letterInWord/letterInWord';
 function App() {
   return (
     <div className="app">
@@ -35,7 +35,8 @@ function App() {
       {/* <NokAndNod /> */}
       {/* <Calc /> */}
       {/* <Reverse/> */}
-      <InputMax/>
+      {/* <InputMax/> */}
+      <LetterInWord/>
     </div>
   );
 }
