@@ -1,0 +1,15 @@
+.search {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 20px;
+}
+
+.main {
+    padding: 30px;
+}
+
+.cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
