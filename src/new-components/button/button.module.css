@@ -1,13 +1,14 @@
 .button {
-    background-color: blue;
     border: none;
     border-radius: 8px;
-    color: white;
-    height: 30px;
     padding: 0 10px;
+    cursor: default;
+}
+
+.shadow {
     cursor: pointer;
 }
 
-.button:hover {
+.shadow:hover {
     box-shadow: 0 0 10px #171ae980;
 }
