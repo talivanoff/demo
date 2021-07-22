@@ -9,7 +9,8 @@ import { idText } from 'typescript';
 import Inp from './components/link/link';
 import React, { useState } from 'react';
 import Link from './components/link/link';
-import Budstrap from './components/budstrap/budstrap';
+// import Budstrap from './components/budstrap/budstrap';
+import Input2207 from './new-components/input2207/input2207'
 
 
 function App() {
@@ -20,34 +21,43 @@ function App() {
         
     // }
 
-    const data = [
-      {
-        title: 'pic',
-        description: 'fcgrthyhty vhyyhvythvtyv hbjyujbyub jyuby ybyb rcrgt gtcvh vhbj juju kuyjyv hyhtvyty yjbukukb ujbubt vtubibyujk yujnkuyby vytyuvtvuyt thbjb thjbytjbj ctr',
-        url: 'https://icdn.lenta.ru/images/2021/04/27/16/20210427163138131/detail_9b31eaf4376cdff03e0ba1bcaa826a01.jpg',
-        button: 'transition',
-        target: '_blank',
-        imageLoading: 'Ops!'
-      },
+    // const data = [
+    //   {
+    //     title: 'pic',
+    //     description: 'fcgrthyhty vhyyhvythvtyv hbjyujbyub jyuby ybyb rcrgt gtcvh vhbj juju kuyjyv hyhtvyty yjbukukb ujbubt vtubibyujk yujnkuyby vytyuvtvuyt thbjb thjbytjbj ctr',
+    //     url: 'https://icdn.lenta.ru/images/2021/04/27/16/20210427163138131/detail_9b31eaf4376cdff03e0ba1bcaa826a01.jpg',
+    //     button: 'transition',
+    //     target: '_blank',
+    //     imageLoading: 'Ops!'
+    //   },
 
-      {
-        title: 'hors',
-        description: 'vhjnbn ukknuiuyinl lm,ol,ol,iom nunuinuin niknuikmlum nubbub vybjn kmlmiomio bbtyvhtycr bjyukbnk bykbkybkb bybkybkbykb ybykbkunub vt tvtvt',
-        url: 'https://s1.1zoom.ru/big0/435/Horses_Sunrises_and_sunsets_532587_1280x720.jpg',
-        button: 'ok',
-        target: '_blank',
-        imageLoading: 'Error'
-      },
+    //   {
+    //     title: 'hors',
+    //     description: 'vhjnbn ukknuiuyinl lm,ol,ol,iom nunuinuin niknuikmlum nubbub vybjn kmlmiomio bbtyvhtycr bjyukbnk bykbkybkb bybkybkbykb ybykbkunub vt tvtvt',
+    //     url: 'https://s1.1zoom.ru/big0/435/Horses_Sunrises_and_sunsets_532587_1280x720.jpg',
+    //     button: 'ok',
+    //     target: '_blank',
+    //     imageLoading: 'Error'
+    //   },
 
-      {
-        title: 'love',
-        description: 'vhhv vhvh vhhhhbj bjjnk cgcgf fcgcf cdfcf hgbhb jnjnkjn njkjjbj hgvghv cfgcfgxg bhjnjn mkmkj vghgvg hhjnjh bhjnjhn vghgbj hby',
-        url: 'https://s1.1zoom.ru/big0/52/Love_Sunrises_and_sunsets_Fingers_Hands_Heart_Sun_532758_1280x897.jpg',
-        button: 'good',
-        target: '_self',
-        imageLoading: 'No card'
-      }
-    ];
+    //   {
+    //     title: 'love',
+    //     description: 'vhhv vhvh vhhhhbj bjjnk cgcgf fcgcf cdfcf hgbhb jnjnkjn njkjjbj hgvghv cfgcfgxg bhjnjn mkmkj vghgvg hhjnjh bhjnjhn vghgbj hby',
+    //     url: 'https://s1.1zoom.ru/big0/52/Love_Sunrises_and_sunsets_Fingers_Hands_Heart_Sun_532758_1280x897.jpg',
+    //     button: 'good',
+    //     target: '_self',
+    //     imageLoading: 'No card'
+    //   }
+    // ]; 
+     const [value2, setValue2] = useState(['']);
+     const getValue23 = (str: string) => {
+      setValue2(pr => {
+        const mas = [...pr];
+        mas.push(str);
+        
+        return mas;
+      });
+}
 
   return (
     <div className="app">
@@ -66,14 +76,21 @@ function App() {
       {names.map((i) => <Button text={i} wid={300} heig={100} key={'id'} isHover col='pink' onCli={handle} />)}
       {isCount && <p>error</p>} */}
 
-      {data.map(({title, description, url, button, target, imageLoading}) =>
+      {/* {data.map(({title, description, url, button, target, imageLoading}) =>
        <Budstrap title={title} 
                  description={description}
                  url={url}
                  button={button}
                  target={target}
                  imageLoading={imageLoading}
-                 key={url}/>)}
+                 key={url}/>)} */}
+                 <Input2207 isNumber/>
+                 <br />
+                 <Input2207 getValue={getValue23} isIcon />
+                 {/* <p>{value2}</p> */}
+                 <ul>
+                   {value2.map((val) => <li key={val}>{val}</li>)}
+                 </ul>
       
     </div>
   );
