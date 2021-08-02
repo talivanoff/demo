@@ -10,7 +10,7 @@ import Inp from './components/link/link';
 import React, { useState } from 'react';
 import Link from './components/link/link';
 // import Budstrap from './components/budstrap/budstrap';
-import Input2207 from './new-components/input2207/input2207'
+import Input0208 from './new-components/input0208/input0208'
 import New2307 from './new-components/new2307/new2307'
 import Todo from './new-components/Todo/todo'
 import clsx from 'clsx';
@@ -18,6 +18,7 @@ import styles from './App.module.css';
 import InBut from './new-components/inBut/inBut';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
+import { useForm } from "react-hook-form";
 
 
 // const data = [
@@ -52,53 +53,53 @@ import { useCallback } from 'react';
 // const array = ['java script', 'pyhton', 'angular', 'react', 'css'];
 
 function App() {
-  // const [currentData, setCurrentData] = useState(data);
+  const [isError, setIsError] = useState(false);
+  const [isOk, setIsOk] = useState(false);
+  const [data, setData] = useState({
+    login: '',
+    email: '',
+    password: '',
+  });
 
-  // const getDel = (index: number) => {
-  //   const newArray = currentData.filter((item, i) => i !== index);
-  //   setCurrentData(newArray);
-  // }
-  const [mas, setMas] = useState([]);
-  
-  useEffect(() => {
-    setMas(JSON.parse(localStorage.getItem('toDos') || '[]'));
-  }, [])
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    setIsError(true);
+    const obgData = JSON.parse(localStorage.getItem('signIn') || '') || {};
+    if(data.login === obgData.login && data.password === obgData.password) {
+      setIsOk(true)
+    } 
+  };
 
-  const del = (i: number) => {
-    const a = mas.filter((_, index) => index !== i)
-    setMas(a);
-    // localStorage.setItem('toDos', JSON.stringify(a));
+  const handleChange = (inputName: string, inputValue: string) => {
+    setData(prev => {
+      return {
+        ...prev,
+        [inputName]: inputValue,
+      }
+    })
   }
-
-  const pushing = (ffff: string) => {
-      const toDo = [ffff, ...mas];
-      // localStorage.setItem('toDos', JSON.stringify(toDo));
-      setMas(toDo);
-  }
-
-  const handleDel = () => {
-    // localStorage.removeItem('toDos');
-    // localStorage.setItem('toDos', JSON.stringify([]));
-    setMas([]);
-  }
-
-  useEffect(() => {
-    localStorage.setItem('toDos', JSON.stringify(mas));
-  }, [mas])
   
   return (
-    <div className={styles.App}>
-      <div className={styles.todo}>
-        <h1 className={styles.heading}>Todo App</h1>
-        <InBut pushing={pushing}/>
-       {mas.map((item, ind) => <Todo text={item} index={ind} del={del} key={item} isCheckbox={true} warning='warning' url='https://image.flaticon.com/icons/png/512/1483/1483063.png' />)}
-        {/* {isDel && < Todo text='Java Script' del={del} isCheckbox={true} warning='warning' url='https://image.flaticon.com/icons/png/512/1483/1483063.png' />} */}
-        {!!mas.length && <button onClick={handleDel}>Delete</button>}
-      </div>
-        
-    </div>
+    <>
+      {!isOk && 
+        <>
+          <div className={styles.app}>
+            <h1 className={styles.h1}>Sign Up</h1>
+            <a className={styles.a} href="#">Have an account?</a>
+            <form className={styles.form} onSubmit={handleClick}>
+              <Input0208 onChange={handleChange} name="login" placeholder='Username'/>
+              <Input0208 onChange={handleChange} name="email" type="email" placeholder='Email'/>
+              <Input0208 onChange={handleChange} name="password" type="password" placeholder='Password'/>
+              <button type="submit" className={styles.button}>Sign In</button>
+            </form>
+          </div>
+          {isError && <h2 className={styles.h2}> There is no such user </h2>}
+        </>
+      }
+      {isOk && <h2> You logged in under the name {data.login} </h2>}
+    </>
   );
-}
+ }
 
 export default App;
 
