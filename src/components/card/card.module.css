@@ -1,0 +1,31 @@
+.text {
+   width: 100%;
+   padding: 40px;
+   display: flex;
+   justify-content: space-between;
+   border: 1px solid black;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+.inform {
+    font-size: 28px;
+}
+
+.button {
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.del {
+    border: 2px solid red;
+    margin-right: 10px;
+ }
+
+ .ok {
+    border: 2px solid green;
+ }
+
+ .edit {
+    border: 2px solid yellow;
+ }

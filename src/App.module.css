@@ -2,54 +2,16 @@
    
 }
 
-.app, .form {
-    margin: 0 auto;
-    width: 700px;
+
+.app {
+    max-width: 400px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.app > * {
-    font-size: 30px;
-}
-
-.button {
-    height: 40px;
-    color: white;
-    background-color: green;
-    border-radius: 4px;
+.text {
     display: flex;
-    align-self: flex-end;
-    margin-top: 20px;
-    align-items: center;
-}
-
-.button:hover {
-    cursor: pointer;
-    background-color: darkgreen;
-}
-
-.h1 {
-    width: 130px;
-    height: 40px;
-}
- 
-.h2 {
-    color: red;
-}
-
-.a {
-    color: green;
-    margin-bottom: 20px;
-    text-decoration: none;
-}
- 
-.a:hover {
-   cursor: pointer;
-   text-decoration: underline;
-}
-
-.registration {
-    margin-top: 60px;
-}
+    justify-content: center;
+ }
