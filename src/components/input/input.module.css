@@ -1,0 +1,22 @@
+.input {
+    width: 100%;
+}
+
+.inp {
+   border-radius: 4px;
+   width: 100%;
+   height: 30px;
+   box-sizing: border-box;
+}
+
+.but {
+   color: white;
+   border-radius: 6px;
+   background-color: blue;
+   width: 100px;
+   height: 40px;
+   font-size: 25px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   cursor: pointer;
+}
