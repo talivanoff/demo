@@ -28,4 +28,9 @@
 
  .edit {
     border: 2px solid yellow;
+    margin-right: 10px;
  }
+
+ .anchor {
+   border: 2px solid rgb(122, 13, 86);
+}
