@@ -1,0 +1,45 @@
+.block {
+    position: relative;
+}
+
+.picture {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    
+}
+
+.picture2 {
+    width: 600px;
+    height:400px;
+    position: absolute;
+}
+
+.text {
+    font-size: 35px;
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 200px;
+}
+
+.but {
+    width: 150px;
+    height: 60px;
+    background-color: coral;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.formes {
+    display:flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 150px;
+    height: 30px;
+    background-color: chartreuse;
+    border-radius: 8px;
+}

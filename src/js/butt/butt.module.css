@@ -1,0 +1,9 @@
+.but {
+    width: 100px;
+    height: 40px;
+    background-color: coral;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid black;
+    margin-right: 15px;
+}
