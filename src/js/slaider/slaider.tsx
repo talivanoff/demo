@@ -63,6 +63,7 @@ const Slaider = () => {
             setIsLoader(false);
         };
         getData();
+        
     }, []);
 
     const handleChange = (e: any) => {

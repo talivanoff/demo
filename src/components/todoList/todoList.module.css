@@ -1,0 +1,56 @@
+.block {
+    border: 2px solid black;
+    width: 600px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.span {
+    font-size: 20px;
+}
+
+.span2 {
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+.inputs {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 400px;
+}
+
+input:focus {
+    border: 2px solid red;
+    color: crimson;
+}
+
+.enter {
+    display: flex;
+}
+
+.btn {
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btnAdd {
+    background: rgb(226, 14, 173);
+}
+
+.btnDelite {
+    background-color: red;
+    
+}
+
+.btnSave {
+    background-color: rgb(89, 25, 209);
+}
