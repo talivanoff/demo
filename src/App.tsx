@@ -9,6 +9,7 @@ import Slaider from './js/slaider/slaider';
 import Users from './js/users';
 import InputTest from './components/inputTest';
 import TodoList from './components/todoList';
+import Posts from './components/posts';
 
 const mas = [
     {
@@ -103,7 +104,8 @@ const App = () => {
             {/* <ImgText /> */}
             {/* <Slaider /> */}
             {/* < Users /> */}
-            <TodoList />
+            {/* <TodoList /> */}
+            <Posts />
             
         </div>
     );
