@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import Buttons from './js/buttons';
 import ImgText from './js/imgText/imgText';
 import Slaider from './js/slaider/slaider';
+import Users from './js/users';
+import InputTest from './components/inputTest';
+import TodoList from './components/todoList';
 
 const mas = [
     {
@@ -81,6 +84,7 @@ const App = () => {
     //   setIsStop(bol);
     // }
 
+  
     return (
         <div>
             {/* <Buttons hide={butHide} butStyle={isVal} stop={errorInter}/>
@@ -97,7 +101,10 @@ const App = () => {
           )}
         </ul> */}
             {/* <ImgText /> */}
-            <Slaider />
+            {/* <Slaider /> */}
+            {/* < Users /> */}
+            <TodoList />
+            
         </div>
     );
 };

@@ -1,0 +1,30 @@
+.block {
+    font-size: 20px;
+    color: coral;
+}
+
+.but {
+    height: 50px;
+    width: 70px;
+    border-radius: 8px;
+    border: 2x solid black;
+    background-color: brown;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.but2 {
+    height: 50px;
+    width: 70px;
+    border-radius: 4px;
+    border: 1x solid green;
+    background-color: rgb(37, 221, 120);
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.lines {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
