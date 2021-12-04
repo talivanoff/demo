@@ -10,6 +10,8 @@ import Users from './js/users';
 import InputTest from './components/inputTest';
 import TodoList from './components/todoList';
 import Posts from './components/posts';
+import Media from './components/media';
+import Slider from './components/slider';
 
 const mas = [
     {
@@ -85,9 +87,25 @@ const App = () => {
     //   setIsStop(bol);
     // }
 
-  
+    const slides = [
+        {
+            img: 'https://www.w3schools.com/howto/img_nature_wide.jpg',
+            text: 'Caption Text 1'
+        },
+        {
+            img: 'https://www.w3schools.com/howto/img_snow_wide.jpg',
+            text: 'Caption Text 2'
+        },
+        {
+            img: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
+            text: 'Caption Text 3'
+        },
+    ];
+
+
     return (
         <div>
+           <Slider />
             {/* <Buttons hide={butHide} butStyle={isVal} stop={errorInter}/>
         {isStop && <span>Error, no further data entry is allowed</span>}
         <ul>
@@ -105,8 +123,9 @@ const App = () => {
             {/* <Slaider /> */}
             {/* < Users /> */}
             {/* <TodoList /> */}
-            <Posts />
-            
+            {/* <Posts /> */}
+            {/* <Media /> */}
+           
         </div>
     );
 };
