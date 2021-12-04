@@ -3,6 +3,8 @@ import { setConstantValue } from 'typescript';
 import clsx from 'clsx';
 import styles from './slider.module.css';
 
+import arrow from '../../images/arrow.svg';
+
 const slides = [
     {
         img: 'https://www.w3schools.com/howto/img_nature_wide.jpg',
@@ -35,8 +37,6 @@ const Slider = () => {
     // }, []);
     const [valCounter, setValCounter] = useState(1);
     
-    const [isActive, setIsActive] = useState(false);
-
     const further = () => {
         if(slides.length > valCounter) {
            setValCounter(valCounter + 1);
@@ -54,7 +54,7 @@ const Slider = () => {
     }
 
     const futerBtn = (ind: number) => {
-    slides.map((_, i) => i === ind && setIsActive(true))
+        setValCounter(ind);
     }
 
     return (
@@ -64,25 +64,28 @@ const Slider = () => {
                 <h1 style={{fontSize: '40px'}}>Слайдер</h1>
                 <div className={styles.progressBar}>
                     {slides.map((item: {img: string, text: string}, i: number) => 
-                        <span key={item.img} className={styles.block}></span>)}
+                        <span key={item.img} className={clsx(styles.block, valCounter === i + 1 && styles.blockActive)}></span>)}
                 </div>
 
                 <div className={styles.foto}>
                     {slides.map((item: {img: string, text: string}, i: number) => 
-                            <>
-                               <img key={item.text} className={styles.bigImages} src={item.img}/>
-                               <span className={styles.text}>{i + 1} / {slides.length}</span>
-                               <span key={item.text} className={styles.names}>{item.text}</span> 
-                            </>)}
-                    
-                    <img onClick={further} className={styles.arrowL} src='/images/l.svg' />
-                    <img onClick={back} className={styles.arrowR} src='/images/r.svg' />
-                        
+                        <div key={item.text} className={valCounter !== i + 1 ? styles.imagesHiden : styles.imagesBlock}>
+                            <img className={styles.bigImages} src={item.img}/>
+                            <span className={styles.text}>{i + 1} / {slides.length}</span>
+                            <div className={styles.names}>{item.text}</div> 
+                        </div>
+                    )}
+                    <div onClick={further} className={clsx(styles.divArrow, styles.divArrowR)}>
+                        <img className={clsx(styles.arrow, styles.arrowR)} src={arrow} />
+                    </div>
+                    <div onClick={back} className={styles.divArrow}>
+                        <img className={styles.arrow} src={arrow} />   
+                    </div>
                 </div>
-                <div className={styles.progressBar}>
+                <div className={styles.progressBar2}>
                     {slides.map((item: {text: string}, ind) => 
-                        <div key={item.text}  onClick={() => futerBtn(ind)} 
-                            className={!isActive ? styles.circle : styles.circleActive}></div>)}
+                        <div key={item.text}  onClick={() => futerBtn(ind + 1)} 
+                            className={valCounter !== ind + 1 ? styles.circle : styles.circleActive}></div>)}
                 </div>
             </div>
         </div>
