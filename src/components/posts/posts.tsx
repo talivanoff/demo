@@ -14,7 +14,12 @@ const Posts = () => {
     const [title, setTitle] = useState('');
     const [valBody, setValBody] = useState('');
     const [valUserId, setValUserId] = useState('');
+    const inputFocus = useRef<any>()
 
+   useEffect(() => {
+    inputFocus.current.focus();
+   },[])
+   
     const handleChangeTitle = (e: any) => {
         setTitle(e.target.value);
     };
@@ -44,7 +49,7 @@ const Posts = () => {
     };
 
     const handleClickPatchingTitle = () => {
-        if (valBody === '' && valUserId === '' && title) {
+        if (title) {
             fetch('https://jsonplaceholder.typicode.com/posts/2', {
                 method: 'PATCH',
                 body: JSON.stringify({
@@ -72,6 +77,7 @@ const Posts = () => {
                     className={styles.inputs}
                     value={valBody}
                     placeholder="body"
+                    ref={inputFocus}
                 />
                 <input
                     onChange={handleChangeUserId}
@@ -79,6 +85,13 @@ const Posts = () => {
                     value={valUserId}
                     placeholder="user id"
                 />
+                     <input
+                    onChange={handleChangeUserId}
+                    className={styles.inputs}
+                    value={valUserId}
+                    placeholder=" copy user id"
+                />
+
                 <button onClick={handleClickSend} className={styles.btn}>
                     Send
                 </button>

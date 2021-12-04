@@ -1,0 +1,53 @@
+.blocks {
+    margin: 10px 40px;
+    
+}
+
+.inputs {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 400px;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: rgb(89, 25, 209);
+}
+
+.cards {
+    width: 150px;
+    height: 150px;
+    border: green;
+}
+
+.bl {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    color: tomato;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    .bl {
+        display: flex;
+       align-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bl {
+        display: flex;
+        flex-direction: column;
+        height: unset;
+    }
+}
