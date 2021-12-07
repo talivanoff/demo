@@ -16,17 +16,7 @@ const TodoList = () => {
     const inputRef = useRef<any>();
     const [isLS, setIsLS] = useState(false);
 
-    useEffect(() => {
-        const getData = async () => {
-            const data = await fetch(
-                'https://jsonplaceholder.typicode.com/todos'
-            );
-            const todos = await data.json();
-            setMas(todos.slice(0, 10));
-        };
-        getData();
-        inputRef.current.focus();
-    }, []);
+    useEffect(() => inputRef.current.focus(), []);
 
     const handleClick = (i: number) => {
         setMas(

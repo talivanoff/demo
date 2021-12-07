@@ -1,9 +1,9 @@
-import { SyntheticEvent, useState, useEffect, useRef } from 'react';
+import { SyntheticEvent, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { setConstantValue } from 'typescript';
 import clsx from 'clsx';
 import styles from './slider.module.css';
-
-import arrow from '../../images/arrow.svg';
+import card from './images/l.svg'
+import card2 from './images/r.svg'
 
 const slides = [
     {
@@ -19,37 +19,56 @@ const slides = [
         text: 'Caption Text 3'
     },
 ];
-
+//    const masIndexs: [] = [];
 
 const Slider = () => {
-    // const [mas, setMas] = useState<TodosProps[]>([] as TodosProps[]);
-
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         const data = await fetch(
-    //             'https://jsonplaceholder.typicode.com/photos'
-    //         );
-    //         const todos = await data.json();
-    //         setMas(todos.slice(0, 7));
-    //     };
-    //     getData();
-        
-    // }, []);
-    const [valCounter, setValCounter] = useState(1);
     
+    const [valCounter, setValCounter] = useState(0);
+    const [isSlider, setIsSlider] = useState(true);
+    const inputRef = useRef<any>();
+    const [val, setVal] = useState<string>('');
+    
+    useEffect(() => inputRef.current.focus(), []);
+
+    useEffect(() => {
+        if(!isSlider) {  
+            const inter = setInterval(() => {
+                if(slides.length - 1 > valCounter) {
+                    setValCounter(valCounter + 1);
+                } else {
+                    setValCounter(0);
+                }
+            }, 5000);
+            return() => clearInterval(inter);
+        }
+    }, [isSlider, valCounter]);
+    
+    const handleBtn = () => {
+        setIsSlider(prev => !prev);
+        if(!isSlider) {
+            return;
+        }
+        if(slides.length - 1 > valCounter) {
+            setValCounter(valCounter + 1);
+        } else {
+            setValCounter(0);
+        }
+    };
+
+
     const further = () => {
-        if(slides.length > valCounter) {
+        if(slides.length - 1 > valCounter) {
            setValCounter(valCounter + 1);
         } else {
-           setValCounter(1);
+           setValCounter(0);
         }
     }
 
     const back = () => {
-        if(valCounter > 1) {
+        if(valCounter > 0) {
             setValCounter(valCounter - 1);
          } else {
-            setValCounter(slides.length);
+            setValCounter(slides.length - 1);
          }
     }
 
@@ -57,35 +76,77 @@ const Slider = () => {
         setValCounter(ind);
     }
 
+    const smollImgBtn = (ind: number) => {
+        setValCounter(ind);
+    }
+
+    const indexes = useMemo(() => slides.map((_, i: number) => i + 1), [slides]);
+    
+    const handleChange = useCallback((e: any) => {
+        if (indexes.includes(+e.target.value)) {
+            setVal(e.target.value);
+        }
+
+        if (e.target.value === '') {
+            setVal(e.target.value);
+            setValCounter(0)
+        }
+    }, [indexes, setVal, setValCounter]);
+
+
+    useEffect(() => {
+        if (indexes.includes(+val)) {
+            setValCounter(+val - 1);
+        }
+    }, [val])
+
     return (
         <div className={styles.slaiders}>
             <div className={styles.leftSaid}></div>
             <div className={styles.content}>
-                <h1 style={{fontSize: '40px'}}>Слайдер</h1>
+                <div className={styles.miniContent}>
+                    <h1 style={{fontSize: '40px'}}>Слайдер</h1>
+                    <div className={styles.inpBtn}>
+                        <input
+                            onChange={handleChange}
+                            className={styles.inputs}
+                            value={val}
+                            ref={inputRef}
+                        />
+                        <button onClick={handleBtn} className={clsx(styles.btn, styles.btnAdd)}>
+                            slider {isSlider ? 'start' : 'stop'}
+                        </button>
+                    </div>
+                </div>
                 <div className={styles.progressBar}>
                     {slides.map((item: {img: string, text: string}, i: number) => 
-                        <span key={item.img} className={clsx(styles.block, valCounter === i + 1 && styles.blockActive)}></span>)}
+                         <div key={item.img} className={clsx(styles.block, valCounter >= i && styles.blockActive)}></div>)}
                 </div>
 
                 <div className={styles.foto}>
                     {slides.map((item: {img: string, text: string}, i: number) => 
-                        <div key={item.text} className={valCounter !== i + 1 ? styles.imagesHiden : styles.imagesBlock}>
-                            <img className={styles.bigImages} src={item.img}/>
-                            <span className={styles.text}>{i + 1} / {slides.length}</span>
-                            <div className={styles.names}>{item.text}</div> 
-                        </div>
+                          valCounter === i && <>
+                        <img key={item.text} className={styles.bigImages} src={item.img}/>
+                        <span className={styles.text}>{i + 1} / {slides.length}</span>
+                        <span key={item.text} className={styles.names}>{item.text}</span> 
+                    </>)}
+                    
+                    <img onClick={back} className={styles.arrow} src={card} />
+                    <img onClick={further} className={clsx(styles.arrow, styles.arrowR)} src={card2} />
+                        
+                </div>
+                <div className={styles.progressBarImg}>
+                    {slides.map((item: {img: string}, index) =>               
+                        <img key={item.img} onClick={() => smollImgBtn(index)} 
+                             className={clsx(styles.smollImg, valCounter === index && styles.smollImgActive)} 
+                             src={item.img}/>
                     )}
-                    <div onClick={further} className={clsx(styles.divArrow, styles.divArrowR)}>
-                        <img className={clsx(styles.arrow, styles.arrowR)} src={arrow} />
-                    </div>
-                    <div onClick={back} className={styles.divArrow}>
-                        <img className={styles.arrow} src={arrow} />   
-                    </div>
                 </div>
                 <div className={styles.progressBar2}>
                     {slides.map((item: {text: string}, ind) => 
-                        <div key={item.text}  onClick={() => futerBtn(ind + 1)} 
-                            className={valCounter !== ind + 1 ? styles.circle : styles.circleActive}></div>)}
+                        <div key={item.text}  onClick={() => futerBtn(ind)}
+                             className={clsx(styles.circle, valCounter === ind && styles.circleActive)}>
+                        </div>)}
                 </div>
             </div>
         </div>
