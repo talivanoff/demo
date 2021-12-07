@@ -12,6 +12,9 @@ import TodoList from './components/todoList';
 import Posts from './components/posts';
 import Media from './components/media';
 import Slider from './components/slider';
+import Text from './components/text';
+import Text2 from './components/text2';
+
 
 const mas = [
     {
@@ -87,25 +90,13 @@ const App = () => {
     //   setIsStop(bol);
     // }
 
-    const slides = [
-        {
-            img: 'https://www.w3schools.com/howto/img_nature_wide.jpg',
-            text: 'Caption Text 1'
-        },
-        {
-            img: 'https://www.w3schools.com/howto/img_snow_wide.jpg',
-            text: 'Caption Text 2'
-        },
-        {
-            img: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
-            text: 'Caption Text 3'
-        },
-    ];
-
+   
 
     return (
         <div>
-           <Slider />
+           {/* <Slider /> */}
+           <Text />
+           <Text2 />
             {/* <Buttons hide={butHide} butStyle={isVal} stop={errorInter}/>
         {isStop && <span>Error, no further data entry is allowed</span>}
         <ul>
