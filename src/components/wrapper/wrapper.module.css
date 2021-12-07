@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.bigText {
+    font-family: cursive;
+    font-size: 20px;
+    width: 800px;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.greenText {
+    color: green;
+}
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
