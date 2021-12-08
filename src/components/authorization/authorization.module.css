@@ -1,0 +1,92 @@
+.block {
+   background-color: khaki;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 440px;
+   height: 400px;
+}
+
+.formes {
+   background-color: gray;
+   width: 400px;
+   height: 360px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.inputs {
+  margin: 10px;
+  width: 300px;
+  height: 40px;
+  background-color: khaki;
+}
+
+.blockCheck {
+  display: flex;
+  align-items: center;
+}
+
+.inputsCheckbox {
+    width: 25px;
+    height: 25px;
+}
+
+.content {
+   font-size: 18px;
+}
+
+.footerText {
+    position: relative;
+}
+
+.btn {
+   width: 60px;
+   height: 35px;
+   text-align: center;
+   cursor: pointer;
+   background-color: rgb(16, 180, 16);
+   margin-bottom: 20px;
+   position: absolute;
+   top: 13px;
+   right: 5px;
+}
+
+.error {
+   color: red;
+   font-family: sans-serif;
+   font-size: 19px;
+   position: absolute;
+   top: 16px;
+   left: 5px;
+}
+
+.errorBtn {
+   color: rgb(75, 180, 75);
+   font-family: sans-serif;
+   font-size: 22px;
+   position: absolute;
+   top: 10px;
+   left: 5px;
+   margin: 5px;
+   height: 30px;
+   cursor: pointer;
+   background-color: lightsteelblue;
+}
+
+.TD {
+   font-size: 18px;
+   color: rgb(75, 180, 75);
+   position: absolute;
+   top: 40px;
+   left: 5px;
+}
+
+.foto {
+   width: 150px;
+   height: 140px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}

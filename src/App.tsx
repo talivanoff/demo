@@ -14,7 +14,7 @@ import Media from './components/media';
 import Slider from './components/slider';
 import Text from './components/text';
 import Text2 from './components/text2';
-
+import Authorization from './components/authorization';
 
 const mas = [
     {
@@ -95,8 +95,9 @@ const App = () => {
     return (
         <div>
            {/* <Slider /> */}
-           <Text />
-           <Text2 />
+           {/* <Text />
+           <Text2 /> */}
+           <Authorization />
             {/* <Buttons hide={butHide} butStyle={isVal} stop={errorInter}/>
         {isStop && <span>Error, no further data entry is allowed</span>}
         <ul>
