@@ -16,6 +16,9 @@ import Text from './components/text';
 import Text2 from './components/text2';
 import Authorization from './components/authorization';
 import HumansLeng from './components/humansLeng';
+import Grids from './components/grids';
+
+
 
 const mas = [
     {
@@ -95,7 +98,9 @@ const App = () => {
 
     return (
         <div>
-          <HumansLeng />
+          {/* <HumansLeng /> */}
+          
+          <Grids />
            {/* <Slider /> */}
            {/* <Text />
            <Text2 /> */}

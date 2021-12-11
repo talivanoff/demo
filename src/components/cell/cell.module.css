@@ -1,0 +1,13 @@
+.cell {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cellBack {
+    border: 1px solid rgb(190, 14, 14);
+    background-color: rgb(105, 108, 110);
+}

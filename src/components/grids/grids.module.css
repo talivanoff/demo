@@ -1,0 +1,55 @@
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.block {
+    display: grid;
+    width: 60%;
+    height: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:  'c1 c2 c3 .'
+                          'b b b b'
+                          'b b b b'
+                          'b b b b';
+                         
+}
+
+.cell1 {
+  grid-area: c1;
+}
+
+.cell2 {
+  grid-area: c2; 
+}
+
+.cell3 {
+    grid-area: c3; 
+}
+
+.bigCell {
+    grid-area: b;
+    background-color: burlywood;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+
+.cell {
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: burlywood;
+}
+
+.cellBack {
+    border: 1px solid rgb(190, 14, 14);
+    background-color: rgb(145, 149, 151);
+}
