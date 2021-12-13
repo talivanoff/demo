@@ -98,9 +98,9 @@ const App = () => {
 
     return (
         <div>
-          {/* <HumansLeng /> */}
+          <HumansLeng />
           
-          <Grids />
+          {/* <Grids /> */}
            {/* <Slider /> */}
            {/* <Text />
            <Text2 /> */}

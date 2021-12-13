@@ -61,6 +61,22 @@ const handleRu = () => {
                 </div>
                 <div onClick={handleBlockBtn} className={styles.blockBtnAndFotoKrets}>
                       <div className={styles.blockBtn}>
+                      {isClose || <div>
+                              {isVisibleBlock && <div className={styles.countrys}>
+                                      <div onClick={handleRu} className={clsx(styles.fotoRep, styles.fotoRepColor)}>
+                                          <img className={styles.foto} src='https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif'/>
+                                          <span className={styles.rep}>Русский</span>
+                                      </div>
+                                      <div onClick={handleEn} className={styles.fotoRep}>
+                                          <img className={styles.foto} src='https://www.flagistrany.ru/data/flags/ultra/gb.png'/>
+                                          <span className={styles.rep}>English</span>
+                                      </div>
+                                      <div onClick={handleUz} className={styles.fotoRep}>
+                                        <img className={styles.foto} src='https://p4.wallpaperbetter.com/wallpaper/136/687/807/flag-uzbekistan-flag-of-uzbekistan-uzbekistan-large-flag-uzbek-hd-wallpaper-preview.jpg'/>
+                                        <span className={styles.rep}>O zbek</span>
+                                      </div>
+                              </div>}
+                      </div>}
                           <img className={styles.foto} src='https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif'/>   
                           <span className={styles.rep} > Русский </span>
                           <img className={isArrow ? styles.foto2 : clsx(styles.foto2, styles.degs)} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWnajmRqXBWZqrRGVd-q0WEkKMfLayMGIKyZP__N1qq6NTwW7QHzCdrl2GPvzLiF72DQ&usqp=CAU'/>
@@ -117,22 +133,6 @@ const handleRu = () => {
                     
                     </div>
                  </div>
-                 {isClose || <div>
-                              {isVisibleBlock && <div className={styles.countrys}>
-                                      <div onClick={handleRu} className={clsx(styles.fotoRep, styles.fotoRepColor)}>
-                                          <img className={styles.foto} src='https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif'/>
-                                          <span className={styles.rep}>Русский</span>
-                                      </div>
-                                      <div onClick={handleEn} className={styles.fotoRep}>
-                                          <img className={styles.foto} src='https://www.flagistrany.ru/data/flags/ultra/gb.png'/>
-                                          <span className={styles.rep}>English</span>
-                                      </div>
-                                      <div onClick={handleUz} className={styles.fotoRep}>
-                                        <img className={styles.foto} src='https://p4.wallpaperbetter.com/wallpaper/136/687/807/flag-uzbekistan-flag-of-uzbekistan-uzbekistan-large-flag-uzbek-hd-wallpaper-preview.jpg'/>
-                                        <span className={styles.rep}>O zbek</span>
-                                      </div>
-                             </div>}
-                 </div>}
         </div>
     );
 };
