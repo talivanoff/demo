@@ -15,7 +15,7 @@ import Slider from './components/slider';
 import Text from './components/text';
 import Text2 from './components/text2';
 import Authorization from './components/authorization';
-import HumansLeng from './components/humansLeng';
+import HumansLang from './components/humansLang';
 import Grids from './components/grids';
 
 
@@ -98,7 +98,7 @@ const App = () => {
 
     return (
         <div>
-          <HumansLeng />
+          <HumansLang />
           
           {/* <Grids /> */}
            {/* <Slider /> */}

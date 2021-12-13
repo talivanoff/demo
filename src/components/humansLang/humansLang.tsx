@@ -1,13 +1,31 @@
-import { SyntheticEvent, useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { SyntheticEvent, useState, useEffect} from 'react';
 import { setConstantValue } from 'typescript';
 import clsx from 'clsx';
-import styles from './humansLeng.module.css';
+import styles from './humansLang.module.css';
+import Tab from '../tab';
 
+ const masLang = [
+      {
+        name: 'Русский',
+        src: 'https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif',
+        lang: 'ru'
+      },
+      {
+        name: 'English',
+        src: 'https://www.flagistrany.ru/data/flags/ultra/gb.png',
+        lang: 'en'
+      },
+      {
+        name: 'O\'zbek',
+        src: 'https://parliament.gov.uz/upload/medialibrary/101/bayroq.gif',
+        lang: 'uz'
+      },
+ ];
 
-const HumansLeng = () => {
+const HumansLang = () => {
 
   const handleScroll = (e: any) => {
-    if((scrollX || scrollY) > 170) {
+    if(scrollY > 170) {
       setIsClose(true);
     }
   }
@@ -25,6 +43,8 @@ const HumansLeng = () => {
 
     useEffect(() => {
      window.addEventListener('scroll', handleScroll);
+     return () =>
+     window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const handleBlockBtn = () => {
@@ -35,23 +55,11 @@ const HumansLeng = () => {
     const handleClose = () => {
       setIsClose(true);
     }
-
     
-const handleRu = () => {
-      localStorage.setItem('Language of the site Humans','ru');
-      setIsClose(true); 
+    const handleLang = (lang: string) => {
+        localStorage.setItem('Language of the site Humans',lang);
+        setIsClose(true); 
     }
-
-    const handleEn = () => {
-      localStorage.setItem('Language of the site Humans','en');
-      setIsClose(true); 
-    }
-
-    const handleUz = () => {
-      localStorage.setItem('Language of the site Humans','uz');
-      setIsClose(true); 
-    }
-
 
     return (
         <div className={styles.block}>
@@ -61,22 +69,17 @@ const handleRu = () => {
                 </div>
                 <div onClick={handleBlockBtn} className={styles.blockBtnAndFotoKrets}>
                       <div className={styles.blockBtn}>
-                      {isClose || <div>
-                              {isVisibleBlock && <div className={styles.countrys}>
-                                      <div onClick={handleRu} className={clsx(styles.fotoRep, styles.fotoRepColor)}>
-                                          <img className={styles.foto} src='https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif'/>
-                                          <span className={styles.rep}>Русский</span>
-                                      </div>
-                                      <div onClick={handleEn} className={styles.fotoRep}>
-                                          <img className={styles.foto} src='https://www.flagistrany.ru/data/flags/ultra/gb.png'/>
-                                          <span className={styles.rep}>English</span>
-                                      </div>
-                                      <div onClick={handleUz} className={styles.fotoRep}>
-                                        <img className={styles.foto} src='https://p4.wallpaperbetter.com/wallpaper/136/687/807/flag-uzbekistan-flag-of-uzbekistan-uzbekistan-large-flag-uzbek-hd-wallpaper-preview.jpg'/>
-                                        <span className={styles.rep}>O zbek</span>
-                                      </div>
+                          <div>
+                              {isVisibleBlock && <div className={styles.countries}>
+                                  {masLang.map((item, i) => <Tab handleLang1={handleLang} item={item} key={item.name} />
+                                  
+                                  // <div onClick={() => handleLang(i)} key={item.name} className={i !== 0 ? styles.fotoRep : clsx(styles.fotoRep, styles.fotoRepColor)}>
+                                  //                               <img className={styles.foto} src={item.src}/>
+                                  //                               <span className={styles.rep}>{item.name}</span>
+                                  //                           </div>
+                                  )}  
                               </div>}
-                      </div>}
+                          </div>
                           <img className={styles.foto} src='https://www.gumer.info/bibliotek_Buks/Polit/Article/flag_clip_image001.gif'/>   
                           <span className={styles.rep} > Русский </span>
                           <img className={isArrow ? styles.foto2 : clsx(styles.foto2, styles.degs)} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWnajmRqXBWZqrRGVd-q0WEkKMfLayMGIKyZP__N1qq6NTwW7QHzCdrl2GPvzLiF72DQ&usqp=CAU'/>
@@ -137,4 +140,4 @@ const handleRu = () => {
     );
 };
 
-export default HumansLeng;
+export default HumansLang;
