@@ -3,7 +3,7 @@ import { setConstantValue } from 'typescript';
 import clsx from 'clsx';
 import styles from './humansCash.module.css';
 import HumansCard from '../humansCard';
-
+import Context from '../context';
 
 const HumansCash = () => {
 
@@ -16,34 +16,16 @@ const HumansCash = () => {
             <div className={styles.block}>
                 <HumansCard title="0 UZS" >
                     <div className={styles.childs}>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>Годовое обслуживание</div>
-                        </div>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>SMS-информирование</div>
-                        </div>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>Выпуск карты</div>
-                        </div>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>Минимальный депозит</div>
-                        </div>
+                        <Context title="Годовое обслуживание" />
+                        <Context title="SMS-информирование" />
+                        <Context title="Выпуск карты" /> 
+                        <Context title="Минимальный депозит" />
                     </div>
                 </HumansCard>
                 <HumansCard title="0 %">
                     <div className={styles.childs}>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>Пополнение с любой другой карты</div>
-                        </div>
-                        <div className={styles.imgText}>
-                            <img className={styles.imges} src='https://humans.uz/static/resources/icons/f1edb4222663ec4e4194c1b329971438/ok-icon.svg' />
-                            <div>Перевод с карты Humans на карту Humans</div>
-                        </div>
+                        <Context title="Пополнение с любой другой карты" />
+                        <Context title="Перевод с карты Humans на карту Humans" />
                     </div>
                     </HumansCard>
                 <HumansCard title="Все услуги" >

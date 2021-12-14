@@ -1,0 +1,9 @@
+.imgText {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.imges {
+    margin-right: 8px;
+}    
