@@ -20,17 +20,7 @@
                          
 }
 
-.cell1 {
-  grid-area: c1;
-}
 
-.cell2 {
-  grid-area: c2; 
-}
-
-.cell3 {
-    grid-area: c3; 
-}
 
 .bigCell {
     grid-area: b;
@@ -41,15 +31,3 @@
 }
 
 
-.cell {
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    background-color: burlywood;
-}
-
-.cellBack {
-    border: 1px solid rgb(190, 14, 14);
-    background-color: rgb(145, 149, 151);
-}

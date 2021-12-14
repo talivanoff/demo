@@ -5,21 +5,28 @@ import styles from './cell.module.css';
 
 
 interface CellProps {
-    names: string;
+    items: { 
+     title: string,
+     isVal: boolean,
+     cells: string,
+    }
     num: number;
-    isVal: boolean;
-    buttonClicks: ()=>void;
-}
+    val: number;
+    handleCell: (num: number) => void;
+  }
 
-const Cell = ({names, num, isVal}: CellProps) => {
-    
-    
+
+const Cell = ({items, num, handleCell, val}: CellProps) => {
+    const {title, isVal, cells} = items;
+    const handleClickCell = () => {
+        handleCell(num);   
+    }
     
     
 
     return (
-        <div  className={clsx(styles.cell, isVal && styles.cellBack)}>
-            {names + num}
+        <div onClick={handleClickCell} className={clsx(styles.cell, cells, val !== num && styles.cellBack)}>
+            {title}
         </div>
     );
 };
