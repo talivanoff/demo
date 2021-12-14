@@ -1,0 +1,20 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 210px;
+    height: 80%;
+    padding: 30px 15px;
+    border-radius: 4px;
+    background-color: white;
+    margin: 10px;
+    min-height: 200px;
+}
+
+.name {
+font-size: 40px;
+font-weight: 800;
+}
+
+
+

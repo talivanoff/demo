@@ -7,7 +7,6 @@ import styles from './cell.module.css';
 interface CellProps {
     items: { 
      title: string,
-     isVal: boolean,
      cells: string,
     }
     num: number;
@@ -17,7 +16,7 @@ interface CellProps {
 
 
 const Cell = ({items, num, handleCell, val}: CellProps) => {
-    const {title, isVal, cells} = items;
+    const {title, cells} = items;
     const handleClickCell = () => {
         handleCell(num);   
     }
