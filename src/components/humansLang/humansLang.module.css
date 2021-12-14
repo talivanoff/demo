@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.block {
+   width: 100%;
+   height: 200vh;
+   background-color: rgb(194, 156, 86);
+   display: flex;
+   justify-content: center;
+}
+
+.baner {
+    position: fixed;
+    margin: 8px;
+    padding: 8px;
+    width: 95%;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 11px;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.text {
+    color: white;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.blockBtnAndFotoKrets {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blockBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.foto {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 8px;
+    border: 1px solid black;
+}
+
+.foto2 {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.degs {
+    transform: rotate(180deg);
+}
+
+.fotoKrets {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.countries {
+    width: 200px;
+    height: 150px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    top: 80px;
+    position: fixed;
+}
+
+.fotoRep {
+    margin: 5px;
+    border-radius: 8px;
+    width: 190px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fotoRepColor {
+    background-color: rgb(210, 215, 224);
+}
+
+.rep {
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.textContentBlock {
+    width: 400px;
+    background-color: rgb(172, 184, 65);
+    
+}
+
+.textContent {
+    margin: 10px;
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+   
+    .baner {
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .countries {
+        top: 100px;
+    }
+    
+    .textContentBlock {
+        width: 300px;
+        background-color: rgb(23, 2, 71);
+        
+    }
+    
+    .textContent {
+        margin: 10px;
+        color: white;
+    }
+}

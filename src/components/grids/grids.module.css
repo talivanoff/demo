@@ -1,0 +1,33 @@
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.block {
+    display: grid;
+    width: 60%;
+    height: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:  'c1 c2 c3 .'
+                          'b b b b'
+                          'b b b b'
+                          'b b b b';
+                         
+}
+
+
+
+.bigCell {
+    grid-area: b;
+    background-color: burlywood;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+

@@ -15,6 +15,10 @@ import Slider from './components/slider';
 import Text from './components/text';
 import Text2 from './components/text2';
 import Authorization from './components/authorization';
+import HumansLang from './components/humansLang';
+import Grids from './components/grids';
+
+
 
 const mas = [
     {
@@ -94,10 +98,13 @@ const App = () => {
 
     return (
         <div>
+          {/* <HumansLang /> */}
+          
+          <Grids />
            {/* <Slider /> */}
            {/* <Text />
            <Text2 /> */}
-           <Authorization />
+           {/* <Authorization /> */}
             {/* <Buttons hide={butHide} butStyle={isVal} stop={errorInter}/>
         {isStop && <span>Error, no further data entry is allowed</span>}
         <ul>
