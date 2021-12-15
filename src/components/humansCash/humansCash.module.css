@@ -1,0 +1,46 @@
+.wind {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.block {
+    width: 800px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgoldenrod;
+    padding: 15px 30px;
+    border: 2px solid gray;
+    border-radius: 8px;
+}
+
+.childs {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.btn {
+    width: 150px;
+    height: 30px;
+    background-color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .block {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        border: 2px solid rgb(167, 10, 10);
+        border-radius: 4px;
+    }
+}
