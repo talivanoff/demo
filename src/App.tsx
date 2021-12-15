@@ -18,7 +18,7 @@ import Authorization from './components/authorization';
 import HumansLang from './components/humansLang';
 import Grids from './components/grids';
 import HumansCash from './components/humansCash';
-
+import UserFoto from './components/userFoto';
 
 const mas = [
     {
@@ -99,7 +99,8 @@ const App = () => {
     return (
         <div>
           {/* <HumansLang /> */}
-          <HumansCash />
+          {/* <HumansCash /> */}
+          <UserFoto />
           {/* <Grids /> */}
            {/* <Slider /> */}
            {/* <Text />
