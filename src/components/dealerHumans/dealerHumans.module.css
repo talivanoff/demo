@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.block {
+    background: -webkit-linear-gradient(left, #f4f769, #f5dd08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 85%;
+    height: 270px;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 40px 0 black;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+
+.btn {
+    display: flex;
+    width: 180px;
+    height: 45px;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.btnClick {
+    background-color: black;
+}
+
+.textBtnClick {
+    color: white;
+}
+
+.textBtn {
+    font-size: 15px;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+.arrow {
+    width: 13px;
+    height: 13px;
+}
+
+.arrowClick {
+    transform: rotate(180deg);
+    stroke: white;
+   
+}
+
+.picture {
+    position: absolute;
+    top: 20px;
+    left: 600px;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+}
+
+.block:hover .picture {
+    top: 10px;
+    transition: 0.3s;
+}
+
+.blackBlock {
+    width: 85%;
+    height: 100px;
+    background-color: black;
+    z-index: 3;
+}
+
+.hiddenBlock {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-top: -20px;
+    border-radius: 0 0 16px 16px;
+    padding: 30px;
+}
+
+.textLink {
+    width: 550px;
+    font-size: 22px;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.textLink a {
+    text-decoration: none;
+    color: cornflowerblue;
+}

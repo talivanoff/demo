@@ -19,6 +19,7 @@ import HumansLang from './components/humansLang';
 import Grids from './components/grids';
 import HumansCash from './components/humansCash';
 import UserFoto from './components/userFoto';
+import DealerHumans from './components/dealerHumans';
 
 const mas = [
     {
@@ -98,9 +99,10 @@ const App = () => {
 
     return (
         <div>
+          <DealerHumans />
           {/* <HumansLang /> */}
           {/* <HumansCash /> */}
-          <UserFoto />
+          {/* <UserFoto /> */}
           {/* <Grids /> */}
            {/* <Slider /> */}
            {/* <Text />
