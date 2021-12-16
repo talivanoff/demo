@@ -1,0 +1,31 @@
+.applic {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.applic:last-child {
+    margin-bottom: 40px;
+}
+
+.blockNum {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    font-weight: 500;
+}
+
+.num {
+    font-size: 22px;
+}
+
+.applicText {
+    font-weight: 500;
+    font-size: 23px;
+    width: 600px;
+}
