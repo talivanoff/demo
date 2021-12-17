@@ -1,40 +1,39 @@
-import { SyntheticEvent, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './userFoto.module.css';
-
-
+ 
+interface MasProps {
+    email: string;
+    first_name: string;
+    avatar: string;
+}
 
 const UserFoto = () => {
-    
-
-    
-    const [mas, setMas] = useState([]);
+    const [mas, setMas] = useState<MasProps[]>([]);
     const [masInp, setMasInp] = useState(mas);
     const [val, setVal] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isClickBtn, setIsClickBtn] = useState(true);
 
-
- useEffect(() => {
+    useEffect(() => {
         fetch('https://reqres.in/api/users')
             .then((data) => data.json())
             .then((result) => {
-                setMas(
-                    result.data.map((item: {email: string, first_name: string, avatar: string}) => item).slice(0, 6)
-                )
-                setMasInp(result.data.map((item: {email: string, first_name: string, avatar: string}) => item).slice(0, 6));
-                 } )
-            
+                setMas(result.data)
+                setMasInp(result.data);
+            });      
     }, []);
- 
+
     const handleBlocks = (i: number) => {
-        setMas(mas.filter((item, index: number) => i !== index && item ));
-        setMasInp(masInp.filter((item, index: number) => i !== index && item ));
+        const deleteElement = mas[i];
+        setMasInp(prev => prev.filter((item) =>  item.first_name !== deleteElement.first_name));
+        const num = mas.filter((_, index: number) => i !== index);
+        setMas(num);
         setIsVisible(true);
         setTimeout(() => {
             setIsVisible(false);
-        },3000)  
+        }, 3000)  
     }
 
     const handleDelete = (i: number) => {
@@ -58,18 +57,13 @@ const UserFoto = () => {
 
     const handleChange = (e: any) => {
         setVal(e.target.value);
-        if (e.target.value === '') {
+        if (!e.target.value.trim()) {
             setMas(masInp);
             return;
-        }
+        };
         setMas(
-            masInp.filter(
-                (item: { first_name: string }) =>
-                    item.first_name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
-            )
+            masInp.filter((item) => item.first_name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1)
         );
-        
-        
     }
 
     return (
@@ -84,7 +78,7 @@ const UserFoto = () => {
                     {isVisible2 && <div className={styles.textRed}>There is no user with this name</div>}                          
             </div>
             <div className={styles.contUser}>
-                 {mas.map((item: {email: string, first_name: string, avatar: string}, i: number) => 
+                 {mas.map((item, i: number) => 
                                       <div key={item.email} className={styles.userInfo}>
                                           <div className={styles.name}>
                                                {item.first_name}
@@ -98,8 +92,7 @@ const UserFoto = () => {
                                                <button onClick={() => handleAdd(i)} className={clsx(styles.but, styles.butBack)}>Add</button>
                                           </div>
                                       </div>)}
-            </div>
-                
+            </div>     
         </div>
     );
 };
