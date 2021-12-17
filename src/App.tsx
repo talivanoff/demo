@@ -99,10 +99,10 @@ const App = () => {
 
     return (
         <div>
-          <DealerHumans />
+          {/* <DealerHumans /> */}
           {/* <HumansLang /> */}
           {/* <HumansCash /> */}
-          {/* <UserFoto /> */}
+          <UserFoto />
           {/* <Grids /> */}
            {/* <Slider /> */}
            {/* <Text />
