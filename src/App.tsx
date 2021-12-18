@@ -20,28 +20,10 @@ import Grids from './components/grids';
 import HumansCash from './components/humansCash';
 import UserFoto from './components/userFoto';
 import DealerHumans from './components/dealerHumans';
+import {Routes, Route, Link} from 'react-router-dom';
+import AddUser from './components/addUser';
+import DeleteUser from './components/deleteUser';
 
-const mas = [
-    {
-        name: 'fgfg',
-        secondName: 'rrrr',
-        age: 12,
-    },
-    {
-        name: 'aaa',
-        secondName: 'rrrr',
-        age: 14,
-    },
-    {
-        name: 'bbb',
-        age: 17,
-    },
-    {
-        name: 'cccc',
-        secondName: 'rrrr',
-        age: 16,
-    },
-];
 
 const App = () => {
     // const cards = JSON.parse(localStorage.getItem('keyValue') as string) as Array<{ name: string; anchor: boolean}>;
@@ -99,10 +81,19 @@ const App = () => {
 
     return (
         <div>
+          <header className={styles.homeBlock}>
+            <Link className={styles.homeText} to='/'>Home</Link>
+            <Link className={styles.homeText} to='addUser'>Added users</Link>
+            <Link className={styles.homeText} to='/deleteUser'>Remote users</Link>
+          </header>
+          <Routes>
+             <Route path='/' element={<UserFoto />}/>
+             <Route path='/addUser' element={<AddUser />}/>
+             <Route path='/deleteUser' element={<DeleteUser />}/>
+          </Routes>
           {/* <DealerHumans /> */}
-          {/* <HumansLang /> */}
+          {/* <HumansLang /> */}     
           {/* <HumansCash /> */}
-          <UserFoto />
           {/* <Grids /> */}
            {/* <Slider /> */}
            {/* <Text />
@@ -146,3 +137,24 @@ export default App;
 </div>
 <Card name={'Card 3'} index={2}/> */
 }
+// const mas = [
+//   {
+//       name: 'fgfg',
+//       secondName: 'rrrr',
+//       age: 12,
+//   },
+//   {
+//       name: 'aaa',
+//       secondName: 'rrrr',
+//       age: 14,
+//   },
+//   {
+//       name: 'bbb',
+//       age: 17,
+//   },
+//   {
+//       name: 'cccc',
+//       secondName: 'rrrr',
+//       age: 16,
+//   },
+// ];
