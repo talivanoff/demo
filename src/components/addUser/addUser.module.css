@@ -1,0 +1,12 @@
+.blockAddUser {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 211, 76);
+}
+
+.textFddUser {
+    font-size: 25px;
+}

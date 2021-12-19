@@ -13,7 +13,6 @@ const UserFoto = () => {
     const [masInp, setMasInp] = useState(mas);
     const [val, setVal] = useState('');
     const [isVisible, setIsVisible] = useState(false);
-    const [isVisible2, setIsVisible2] = useState(false);
     const [isClickBtn, setIsClickBtn] = useState(true);
 
     useEffect(() => {
@@ -46,15 +45,6 @@ const UserFoto = () => {
         setIsClickBtn(false);
     }
 
-    useEffect(() => {
-        if(!mas.length) {
-            setIsVisible2(true);
-        } else {
-            setIsVisible2(false);
-        }
-    }, [mas])
-    
-
     const handleChange = (e: any) => {
         setVal(e.target.value);
         if (!e.target.value.trim()) {
@@ -74,8 +64,7 @@ const UserFoto = () => {
                  </div>}
             </div>
             <div className={styles.blockInput}>
-                    <input className={styles.Inp} onChange={handleChange} value={val} placeholder='inter a name'/> 
-                    {isVisible2 && <div className={styles.textRed}>There is no user with this name</div>}                          
+                    <input className={styles.Inp} onChange={handleChange} value={val} placeholder='inter a name'/>                         
             </div>
             <div className={styles.contUser}>
                  {mas.map((item, i: number) => 

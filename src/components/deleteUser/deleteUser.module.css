@@ -1,0 +1,12 @@
+.blockDeleteUser {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 47, 47);
+}
+
+.textDeleteUser {
+    font-size: 25px;
+}

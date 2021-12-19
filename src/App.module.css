@@ -24,3 +24,19 @@
      color: red;
      font-size: 25px;
  }
+
+ .homeBlock {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+ }
+
+ .homeText {
+    font-size: 25px;
+    color: white;
+    margin-right: 50px;
+    text-decoration: none;
+ }
