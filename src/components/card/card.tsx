@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 import styles from './card.module.css';
-import { count } from 'console';
+
 
 interface PropsCard {
    name: string;

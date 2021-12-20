@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import clsx from 'clsx';
 import styles from './userFoto.module.css';
+import ComponentUserFoto from '../componentUserFoto';
  
 interface MasProps {
     email: string;
@@ -13,15 +13,22 @@ const UserFoto = () => {
     const [masInp, setMasInp] = useState(mas);
     const [val, setVal] = useState('');
     const [isVisible, setIsVisible] = useState(false);
-    const [isClickBtn, setIsClickBtn] = useState(true);
+    const [isClickBtn, setIsClickBtn] = useState(true);   
 
     useEffect(() => {
-        fetch('https://reqres.in/api/users')
-            .then((data) => data.json())
-            .then((result) => {
-                setMas(result.data)
-                setMasInp(result.data);
-            });      
+        if(localStorage.getItem('UserFoto')) {
+            const users = JSON.parse(String(localStorage.getItem('UserFoto')));
+            setMas(users);
+            setMasInp(users);
+        } else {
+            fetch('https://reqres.in/api/users')
+                .then((data) => data.json())
+                .then((result) => {
+                    setMas(result.data)
+                    setMasInp(result.data);
+                    localStorage.setItem('UserFoto',JSON.stringify(result.data));
+                });
+        }
     }, []);
 
     const handleBlocks = (i: number) => {
@@ -34,15 +41,31 @@ const UserFoto = () => {
             setIsVisible(false);
         }, 3000)  
     }
-
+    
+    let delUser = [];
     const handleDelete = (i: number) => {
         handleBlocks(i);
         setIsClickBtn(true);
+        if(localStorage.getItem('UserFotoDelete')) {
+                delUser = JSON.parse(String(localStorage.getItem('UserFotoDelete')));
+                delUser.push(mas[i]);
+                localStorage.setItem('UserFotoDelete',JSON.stringify(delUser));
+            } else {
+            localStorage.setItem('UserFotoDelete',JSON.stringify([mas[i]]));
+        }
     }
-
+    
+    let addUser = [];
     const handleAdd = (i: number) => {
         handleBlocks(i);
         setIsClickBtn(false);
+        if(localStorage.getItem('UserFotoAdd')) {
+                addUser = JSON.parse(String(localStorage.getItem('UserFotoAdd')));
+                addUser.push(mas[i]);
+                localStorage.setItem('UserFotoAdd',JSON.stringify(addUser));
+            } else {
+            localStorage.setItem('UserFotoAdd',JSON.stringify([mas[i]]));
+        }
     }
 
     const handleChange = (e: any) => {
@@ -51,9 +74,7 @@ const UserFoto = () => {
             setMas(masInp);
             return;
         };
-        setMas(
-            masInp.filter((item) => item.first_name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1)
-        );
+        setMas(masInp.filter((item) => item.first_name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1));
     }
 
     return (
@@ -64,24 +85,19 @@ const UserFoto = () => {
                  </div>}
             </div>
             <div className={styles.blockInput}>
-                    <input className={styles.Inp} onChange={handleChange} value={val} placeholder='inter a name'/>                         
+                    <input className={styles.inp} onChange={handleChange} value={val} placeholder='inter a name'/>                         
             </div>
             <div className={styles.contUser}>
-                 {mas.map((item, i: number) => 
-                                      <div key={item.email} className={styles.userInfo}>
-                                          <div className={styles.name}>
-                                               {item.first_name}
-                                          </div>
-                                          <div className={styles.email}>
-                                               {item.email}
-                                          </div>
-                                          <img className={styles.foto} src={item.avatar} />
-                                          <div className={styles.btn}>
-                                               <button onClick={() => handleDelete(i)} className={styles.but}>Delete</button>
-                                               <button onClick={() => handleAdd(i)} className={clsx(styles.but, styles.butBack)}>Add</button>
-                                          </div>
-                                      </div>)}
-            </div>     
+                 {mas.map(({email, first_name, avatar}, ind: number) => 
+                        <ComponentUserFoto key={email} 
+                                            mail={email} 
+                                            name={first_name}
+                                            foto={avatar}
+                                            del={handleDelete}
+                                            add={handleAdd} 
+                                            isVis
+                                            i={ind}/>)}
+            </div>                         
         </div>
     );
 };

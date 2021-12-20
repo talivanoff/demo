@@ -1,12 +1,24 @@
 .blockAddUser {
     width: 100%;
-    height: 40px;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(18, 211, 76);
+    flex-direction: column;
 }
 
-.textFddUser {
+.textAddUser {
     font-size: 25px;
+    background-color: rgb(62, 236, 27);
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 7.5px;
+}
+
+.contUsers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
