@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 
-.text {
+/* .text {
     display: flex;
     justify-content: center;
  }
@@ -39,4 +39,24 @@
     color: white;
     text-decoration: none;
     margin-right: 30px;
+ } */
+
+ .title {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    margin-left: 40px;
+ }
+
+ .arts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+
+ @media screen and (max-width: 596px) {
+   .title {
+      text-align: center;
+      margin-left: 0;
+   }
  }
