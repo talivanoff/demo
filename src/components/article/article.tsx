@@ -1,16 +1,22 @@
 import styles from './article.module.css';
+import { useState} from 'react';
 
 interface ArticleProps {
     names: string;
     prof: string;
     text: string;
-    data: string;
+    data?: string;
     foto: string;
     website: string;
   }
 
 const Article = ({names,prof, text, data, foto, website}: ArticleProps) => {
     
+    // const [isData, setIsData] = useState(false);
+    //  if(data !== undefined) {
+    //     setIsData(true);
+    //  }
+
     return (
         <a className={styles.link} href={website}>
             <div  className={styles.content}>
@@ -18,7 +24,7 @@ const Article = ({names,prof, text, data, foto, website}: ArticleProps) => {
                     <div className={styles.namesProf}>
                         <div className={styles.names}>
                             {names}
-                        </div>
+                        </div>  
                         <div className={styles.prof}>
                             {prof}
                         </div>
@@ -27,7 +33,9 @@ const Article = ({names,prof, text, data, foto, website}: ArticleProps) => {
                         {text}
                     </div>
                     <div className={styles.blockTime}>
-                        <img className={styles.imgTime} src='http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w128h1281338911586clock.png' /> 
+                        {/* {isData && */}
+                     {data && <img className={styles.imgTime} src='http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w128h1281338911586clock.png' />}
+                         {/* } */}
                         <div className={styles.time}>
                             {data}
                         </div>
