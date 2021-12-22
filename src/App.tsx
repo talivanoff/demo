@@ -78,36 +78,58 @@ const App = () => {
     //   setIsStop(bol);
     // }
 
-   
+   const masArt = [
+     {
+      names: 'Михаил Грачёв', 
+      prof: 'финансовый консультант', 
+      text: 'Прогноз по валютам: как изменятся курсы в обменниках накануне Рождества',
+      // data: '20.12',
+      foto: 'https://myfin.by/source/1/1cVockPPPdUTID9bbFrcmmTax5S2YnKk.png',
+      website: 'https://myfin.by/stati/view/prognoz-po-valutam-kak-izmenatsa-kursy-v-obmennikah-nakanune-rozdestva',
+     },
+
+     {
+      names: 'Трофим Ерёменко', 
+      prof: 'криптовалютный эксперт', 
+      text: 'Когда снова оживёт рынок криптовалют и биткоин пойдёт в рост? Мнение эксперта',
+      data: '17.12',
+      foto: 'https://myfin.by/source/1/aMwKBiF7ZHqqoR_MSzxbZMsE-kjifGFJ.png',
+      website: 'https://myfin.by/stati/view/kogda-snova-ozivet-rynok-kriptovalut-i-bitkoin-pojdet-v-rost-mnenie-eksperta',
+     },  
+
+     {
+      names: 'Вадим Иосуб', 
+      prof: 'старший аналитик компании "Альпари"', 
+      text: 'Прогноз по валютам: российский рубль востанавливается, а что будет с долларом и евро',
+      // data: '06.12',
+      foto: 'https://myfin.by/source/1/TaAtPd1ohgtxB04ly6QJiM4AJcfYhXqJ.png',
+      website: 'https://myfin.by/stati/view/prognoz-po-valutam-rossijskij-rubl-vosstanavlivaetsa-a-cto-budet-s-dollarom-i-evro',
+     },
+
+     {
+      names: 'Катерина Борнукова', 
+      prof: 'эксперт образовательного центра BEROC', 
+      text: 'Ввели новые санкции - что будет с рублём и экономикой? Объясняет эксперт',
+      data: '03.12',
+      foto: 'https://myfin.by/source/1/PBWsos4kPgqIx9n2R1j5En6qrk6BWvBX.png',
+      website: 'https://myfin.by/stati/view/vveli-novye-sankcii-cto-budet-s-rublem-i-ekonomikoj-obasnaet-ekspert',
+     }
+   ];
 
     return (
         <div>
           <h1 className={styles.title}>Мнения</h1>
           <div className={styles.arts}>    
-            <Article names='Михаил Грачёв' 
-                    prof='финансовый консультант' 
-                    text='Прогноз по валютам: как изменятся курсы в обменниках накануне Рождества'
-                    data='20.12'
-                    foto='https://myfin.by/source/1/1cVockPPPdUTID9bbFrcmmTax5S2YnKk.png'
-                    website='https://myfin.by/stati/view/prognoz-po-valutam-kak-izmenatsa-kursy-v-obmennikah-nakanune-rozdestva' />
-            <Article names='Трофим Ерёменко' 
-                    prof='криптовалютный эксперт' 
-                    text='Когда снова оживёт рынок криптовалют и биткоин пойдёт в рост? Мнение эксперта'
-                    data='17.12'
-                    foto='	https://myfin.by/source/1/aMwKBiF7ZHqqoR_MSzxbZMsE-kjifGFJ.png'
-                    website='https://myfin.by/stati/view/kogda-snova-ozivet-rynok-kriptovalut-i-bitkoin-pojdet-v-rost-mnenie-eksperta' />
-            <Article names='Вадим Иосуб' 
-                    prof='старший аналитик компании "Альпари"' 
-                    text='Прогноз по валютам: российский рубль востанавливается, а что будет с долларом и евро'
-                    data='06.12'
-                    foto='https://myfin.by/source/1/TaAtPd1ohgtxB04ly6QJiM4AJcfYhXqJ.png'
-                    website='https://myfin.by/stati/view/prognoz-po-valutam-rossijskij-rubl-vosstanavlivaetsa-a-cto-budet-s-dollarom-i-evro' />
-            <Article names='Катерина Борнукова' 
-                    prof='эксперт образовательного центра BEROC' 
-                    text='Ввели новые санкции - что будет с рублём и экономикой? Объясняет эксперт'
-                    data='03.12'
-                    foto='https://myfin.by/source/1/PBWsos4kPgqIx9n2R1j5En6qrk6BWvBX.png'
-                    website='https://myfin.by/stati/view/vveli-novye-sankcii-cto-budet-s-rublem-i-ekonomikoj-obasnaet-ekspert' />
+
+            {masArt.map(({names, prof, text, data, foto, website}) => <Article names={names} 
+                                                                               prof={prof} 
+                                                                               text={text}
+                                                                               data={data}
+                                                                               foto={foto}
+                                                                               website={website}
+                                                                               key={`$(website) $(text)`}
+                                                                               />)}
+
           </div>
           {/* <header className={styles.homeBlock}>
             <Link className={styles.homeText} to='/'>Home</Link>
