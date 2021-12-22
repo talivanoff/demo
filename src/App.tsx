@@ -24,7 +24,7 @@ import {Routes, Route, Link} from 'react-router-dom';
 import AddUser from './components/addUser';
 import DeleteUser from './components/deleteUser';
 import Article from './components/article';
-
+import AlwaysAndEverywhere from './components/alwaysAndEverywhere';
 
 const App = () => {
     // const cards = JSON.parse(localStorage.getItem('keyValue') as string) as Array<{ name: string; anchor: boolean}>;
@@ -118,7 +118,25 @@ const App = () => {
 
     return (
         <div>
-          <h1 className={styles.title}>Мнения</h1>
+           <div className={styles.cont}>
+              <AlwaysAndEverywhere title='Снятие наличных'  styleBlock='styleBlock'>
+                    <div className={styles.childs}>
+                         Снять деньги с карты Humans можно в любом банкомате мира с логотипом VISA в той
+                         валюте, которая доступна в конкретном банкомате.
+                    </div>
+              </AlwaysAndEverywhere>                    
+              <AlwaysAndEverywhere title='Всегда и везде' site='https://www.youtube.com/' textBtn="Подробнее">
+                    <div className={styles.childs}>
+                         Если в вашем телефоне установлена SIM-карта Humans, вы получите неограниченный
+                         доступ к своим деньгам. Приложение 
+                         <a className={styles.links} href='https://humans.uz/ru/'> HUMANS.uz </a> 
+                         будет работать в любой стране мира, даже если на счете нет денег или не подключены
+                         услуги связи. В этом случае приложение не расходует трафик – вы можете пользоваться
+                         им бесплатно.
+                    </div>
+              </AlwaysAndEverywhere>
+           </div>
+          {/* <h1 className={styles.title}>Мнения</h1>
           <div className={styles.arts}>    
 
             {masArt.map(({names, prof, text, data, foto, website}) => <Article names={names} 

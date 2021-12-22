@@ -1,0 +1,41 @@
+.block {
+    width: 430px;
+    height: 700px;
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px;
+}
+
+.styleBlock{
+    background-color: rgb(49, 48, 48);
+    color: white;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.btn {
+    border-radius: 4px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid red;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 190px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+}
+
+@media screen and (max-width: 700px) {
+    .title {
+       text-align: center;
+    }
+  }
