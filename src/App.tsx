@@ -120,6 +120,7 @@ const App = () => {
         <div>
           <h1 className={styles.title}>Мнения</h1>
           <div className={styles.arts}>    
+
             {masArt.map(({names, prof, text, data, foto, website}) => <Article names={names} 
                                                                                prof={prof} 
                                                                                text={text}
@@ -128,6 +129,7 @@ const App = () => {
                                                                                website={website}
                                                                                key={`$(website) $(text)`}
                                                                                />)}
+
           </div>
           {/* <header className={styles.homeBlock}>
             <Link className={styles.homeText} to='/'>Home</Link>
