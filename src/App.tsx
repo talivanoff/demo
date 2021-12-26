@@ -119,7 +119,10 @@ const App = () => {
 
     return (
         <div>
-          <Snowfall />
+           <Snowfall
+              color="blue"
+              snowflakeCount={2000}
+           />
            <div className={styles.cont}>
               <AlwaysAndEverywhere title='Снятие наличных'  styleBlock='styleBlock'>
                     <div className={styles.childs}>
