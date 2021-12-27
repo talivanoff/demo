@@ -25,6 +25,7 @@ import AddUser from './components/addUser';
 import DeleteUser from './components/deleteUser';
 import Article from './components/article';
 import AlwaysAndEverywhere from './components/alwaysAndEverywhere';
+import Snowfall from 'react-snowfall';
 
 const App = () => {
     // const cards = JSON.parse(localStorage.getItem('keyValue') as string) as Array<{ name: string; anchor: boolean}>;
@@ -118,6 +119,10 @@ const App = () => {
 
     return (
         <div>
+           <Snowfall
+              color="blue"
+              snowflakeCount={2000}
+           />
            <div className={styles.cont}>
               <AlwaysAndEverywhere title='Снятие наличных'  styleBlock='styleBlock'>
                     <div className={styles.childs}>
