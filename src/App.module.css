@@ -63,7 +63,7 @@
    }
  } */
 
- .cont {
+ /* .cont {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -72,6 +72,8 @@
     flex-wrap: wrap;
     background-color: black;
  }
+
+ 
 
  .childs {
     font-size: 20px;
@@ -94,4 +96,15 @@
    .childs {
       text-align: center;
    }
- }
+ } */
+ 
+ 
+ .contein {
+   display: flex;
+   align-items: center;
+   overflow-x: scroll;
+   height: 300px;
+   width: 100%;
+   background-color: rgb(145, 221, 221);
+   
+}

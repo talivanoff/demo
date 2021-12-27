@@ -1,0 +1,44 @@
+.blockCell {
+    align-items: center;
+    background: #282828;
+    border-radius: 24px;
+    height: 190px;
+    margin: 30px 20px;
+    padding: 40px 24px 32px;
+    display: flex;
+    min-width: 300px;
+}
+
+.pinkBuck {
+    background-color: pink;
+}
+
+.blueBuck {
+    background-color: rgb(49, 49, 206);
+}
+
+.yellowBuck {
+    background-color: rgb(164, 172, 62);
+}
+
+.imges {
+    width: 90px;
+    height: 90px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleImges {
+    width: 30px;
+    margin-bottom: 5px;
+}
+
+.title {
+    color: white;
+    font-size: 25px;
+}
