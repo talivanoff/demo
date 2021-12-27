@@ -26,8 +26,96 @@ import DeleteUser from './components/deleteUser';
 import Article from './components/article';
 import AlwaysAndEverywhere from './components/alwaysAndEverywhere';
 import Snowfall from 'react-snowfall';
+import CellScroll from './components/cellScroll';
+
+const cardsCell = [
+  {
+      title: "WeChat",
+      src: "/images/wechat.png"
+  },
+  {
+      title: "Twitch",
+      src: "/images/twitch.png"
+  },
+  {
+      title: "Yandex Music",
+      src: "/images/yandex-music.png"
+  },
+  {
+      title: "TikTok",
+      src: "/images/tiktok.png"
+  },
+  {
+      title: "Безлимитный интернет",
+      src: "/images/internet.png",
+      cellBack: "pinkBuck",
+  },
+  {
+      title: "Instagram",
+      src: "/images/instagram.png"
+  },
+  {
+      title: "WhatsApp",
+      src: "/images/whatsapp.png"
+  },
+  {
+      title: "Facebook",
+      src: "/images/facebook.png"
+  },
+  {
+      title: "Shazam",
+      src: "/images/shazam.png"
+  },
+  {
+      title: "Spotify",
+      src: "/images/spotify.png"
+  },
+  {
+      title: "Odnoklassniki",
+      src: "/images/odnoklassniki.png"
+  },
+  {
+      title: "VK",
+      src: "/images/vk.png"
+  },
+  {
+      title: "Zoom",
+      src: "/images/zoom.png"
+  },
+  {
+      title: "Безлимитные звонки",
+      src: "/images/calls.png",
+      cellBack: "blueBuck",
+  },
+  {
+      title: "YouTube",
+      src: "/images/youtube.png"
+  },
+  {
+      title: "Красивый номер",
+      src: "/images/number.png",
+      cellBack: "yellowBuck",
+  },
+  {
+      title: "Apple Music",
+      src: "/images/apple-music.png"
+  },
+  {
+      title: "Tas-Ix",
+      src: "/images/tasix.png"
+  },
+  {
+      title: "IMO",
+      src: "/images/imo.png" 
+  }
+]
+
+
+
 
 const App = () => {
+
+  
     // const cards = JSON.parse(localStorage.getItem('keyValue') as string) as Array<{ name: string; anchor: boolean}>;
     // const [rend, setRend] = useState(cards?.length ? cards : masCard);
     // const [count, setCount] = useState<number>(0);
@@ -79,47 +167,52 @@ const App = () => {
     //   setIsStop(bol);
     // }
 
-   const masArt = [
-     {
-      names: 'Михаил Грачёв', 
-      prof: 'финансовый консультант', 
-      text: 'Прогноз по валютам: как изменятся курсы в обменниках накануне Рождества',
-      // data: '20.12',
-      foto: 'https://myfin.by/source/1/1cVockPPPdUTID9bbFrcmmTax5S2YnKk.png',
-      website: 'https://myfin.by/stati/view/prognoz-po-valutam-kak-izmenatsa-kursy-v-obmennikah-nakanune-rozdestva',
-     },
+  //  const masArt = [
+  //    {
+  //     names: 'Михаил Грачёв', 
+  //     prof: 'финансовый консультант', 
+  //     text: 'Прогноз по валютам: как изменятся курсы в обменниках накануне Рождества',
+  //     // data: '20.12',
+  //     foto: 'https://myfin.by/source/1/1cVockPPPdUTID9bbFrcmmTax5S2YnKk.png',
+  //     website: 'https://myfin.by/stati/view/prognoz-po-valutam-kak-izmenatsa-kursy-v-obmennikah-nakanune-rozdestva',
+  //    },
 
-     {
-      names: 'Трофим Ерёменко', 
-      prof: 'криптовалютный эксперт', 
-      text: 'Когда снова оживёт рынок криптовалют и биткоин пойдёт в рост? Мнение эксперта',
-      data: '17.12',
-      foto: 'https://myfin.by/source/1/aMwKBiF7ZHqqoR_MSzxbZMsE-kjifGFJ.png',
-      website: 'https://myfin.by/stati/view/kogda-snova-ozivet-rynok-kriptovalut-i-bitkoin-pojdet-v-rost-mnenie-eksperta',
-     },  
+  //    {
+  //     names: 'Трофим Ерёменко', 
+  //     prof: 'криптовалютный эксперт', 
+  //     text: 'Когда снова оживёт рынок криптовалют и биткоин пойдёт в рост? Мнение эксперта',
+  //     data: '17.12',
+  //     foto: 'https://myfin.by/source/1/aMwKBiF7ZHqqoR_MSzxbZMsE-kjifGFJ.png',
+  //     website: 'https://myfin.by/stati/view/kogda-snova-ozivet-rynok-kriptovalut-i-bitkoin-pojdet-v-rost-mnenie-eksperta',
+  //    },  
 
-     {
-      names: 'Вадим Иосуб', 
-      prof: 'старший аналитик компании "Альпари"', 
-      text: 'Прогноз по валютам: российский рубль востанавливается, а что будет с долларом и евро',
-      // data: '06.12',
-      foto: 'https://myfin.by/source/1/TaAtPd1ohgtxB04ly6QJiM4AJcfYhXqJ.png',
-      website: 'https://myfin.by/stati/view/prognoz-po-valutam-rossijskij-rubl-vosstanavlivaetsa-a-cto-budet-s-dollarom-i-evro',
-     },
+  //    {
+  //     names: 'Вадим Иосуб', 
+  //     prof: 'старший аналитик компании "Альпари"', 
+  //     text: 'Прогноз по валютам: российский рубль востанавливается, а что будет с долларом и евро',
+  //     // data: '06.12',
+  //     foto: 'https://myfin.by/source/1/TaAtPd1ohgtxB04ly6QJiM4AJcfYhXqJ.png',
+  //     website: 'https://myfin.by/stati/view/prognoz-po-valutam-rossijskij-rubl-vosstanavlivaetsa-a-cto-budet-s-dollarom-i-evro',
+  //    },
 
-     {
-      names: 'Катерина Борнукова', 
-      prof: 'эксперт образовательного центра BEROC', 
-      text: 'Ввели новые санкции - что будет с рублём и экономикой? Объясняет эксперт',
-      data: '03.12',
-      foto: 'https://myfin.by/source/1/PBWsos4kPgqIx9n2R1j5En6qrk6BWvBX.png',
-      website: 'https://myfin.by/stati/view/vveli-novye-sankcii-cto-budet-s-rublem-i-ekonomikoj-obasnaet-ekspert',
-     }
-   ];
+  //    {
+  //     names: 'Катерина Борнукова', 
+  //     prof: 'эксперт образовательного центра BEROC', 
+  //     text: 'Ввели новые санкции - что будет с рублём и экономикой? Объясняет эксперт',
+  //     data: '03.12',
+  //     foto: 'https://myfin.by/source/1/PBWsos4kPgqIx9n2R1j5En6qrk6BWvBX.png',
+  //     website: 'https://myfin.by/stati/view/vveli-novye-sankcii-cto-budet-s-rublem-i-ekonomikoj-obasnaet-ekspert',
+  //    }
+  //  ];
 
     return (
-        <div>
-           <Snowfall
+        <div className={styles.contein}>
+            {cardsCell.map(({title, src, cellBack}) => <CellScroll title={title} 
+                                                                                 src={src}  
+                                                                                 cellBack={cellBack} 
+                                                                                 key={title}/>)}
+          
+           {/* <Snowfall
               color="blue"
               snowflakeCount={2000}
            />
@@ -140,7 +233,7 @@ const App = () => {
                          им бесплатно.
                     </div>
               </AlwaysAndEverywhere>
-           </div>
+           </div> */}
           {/* <h1 className={styles.title}>Мнения</h1>
           <div className={styles.arts}>    
 
