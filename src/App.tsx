@@ -26,91 +26,7 @@ import DeleteUser from './components/deleteUser';
 import Article from './components/article';
 import AlwaysAndEverywhere from './components/alwaysAndEverywhere';
 import Snowfall from 'react-snowfall';
-import CellScroll from './components/cellScroll';
-
-const cardsCell = [
-  {
-      title: "WeChat",
-      src: "/images/wechat.png"
-  },
-  {
-      title: "Twitch",
-      src: "/images/twitch.png"
-  },
-  {
-      title: "Yandex Music",
-      src: "/images/yandex-music.png"
-  },
-  {
-      title: "TikTok",
-      src: "/images/tiktok.png"
-  },
-  {
-      title: "Безлимитный интернет",
-      src: "/images/internet.png",
-      cellBack: "pinkBuck",
-  },
-  {
-      title: "Instagram",
-      src: "/images/instagram.png"
-  },
-  {
-      title: "WhatsApp",
-      src: "/images/whatsapp.png"
-  },
-  {
-      title: "Facebook",
-      src: "/images/facebook.png"
-  },
-  {
-      title: "Shazam",
-      src: "/images/shazam.png"
-  },
-  {
-      title: "Spotify",
-      src: "/images/spotify.png"
-  },
-  {
-      title: "Odnoklassniki",
-      src: "/images/odnoklassniki.png"
-  },
-  {
-      title: "VK",
-      src: "/images/vk.png"
-  },
-  {
-      title: "Zoom",
-      src: "/images/zoom.png"
-  },
-  {
-      title: "Безлимитные звонки",
-      src: "/images/calls.png",
-      cellBack: "blueBuck",
-  },
-  {
-      title: "YouTube",
-      src: "/images/youtube.png"
-  },
-  {
-      title: "Красивый номер",
-      src: "/images/number.png",
-      cellBack: "yellowBuck",
-  },
-  {
-      title: "Apple Music",
-      src: "/images/apple-music.png"
-  },
-  {
-      title: "Tas-Ix",
-      src: "/images/tasix.png"
-  },
-  {
-      title: "IMO",
-      src: "/images/imo.png" 
-  }
-]
-
-
+import Fhby from './components/fhby';
 
 
 const App = () => {
@@ -206,12 +122,8 @@ const App = () => {
   //  ];
 
     return (
-        <div className={styles.contein}>
-            {cardsCell.map(({title, src, cellBack}) => <CellScroll title={title} 
-                                                                                 src={src}  
-                                                                                 cellBack={cellBack} 
-                                                                                 key={title}/>)}
-          
+        <div>
+          <Fhby />
            {/* <Snowfall
               color="blue"
               snowflakeCount={2000}

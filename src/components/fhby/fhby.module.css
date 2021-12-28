@@ -1,0 +1,90 @@
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 300px;
+    height: 600px;
+    margin-top: 100px;
+}
+
+.blockImg {
+    width: 300px;
+    height: 400px;
+    background-image: url('https://imgproxy.fh.by/4VWXckwMtb90Iei1NOdH8Vwkc-8q2RcChzM9pIWDZDc/g:sm/w:214/h:321/q:85/czM6Ly9maC5ieS8yNjAwMjMvNThmMjc5MGM0NWY2ZmRhN2E4YmZkODQyMzFhZGYzODk.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.blockImg:hover {
+    background-image: url('https://imgproxy.fh.by/__l7rMSEm_TLugkzwem21Li0mDSyIlKLCvnBMj2oy8E/g:sm/w:294/h:441/q:95/czM6Ly9maC5ieS8yNjAwMjYvN2MzZWYxOTc0NDhlYjk4YmM1YjVjNTU4YWIyODY1MzA.jpg') ;
+}
+
+.season {
+    background-color: rgb(107, 96, 52);
+    border-radius: 4px;
+    margin: 7px;
+    padding: 7px;
+    width: 100px;
+    
+}
+
+.name {
+    font-size: 25px;
+    margin-top: 20px;
+
+}
+
+.text {
+    color: grey;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.hoverBlock {
+    display: flex;
+
+}
+
+.but {
+    width: 180px;
+    height: 40px;
+    padding: 8px;
+    background-color: rgb(39, 102, 39);
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.but:hover {
+    background-color: rgb(81, 119, 81);
+}
+
+.blockMiniBat {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(39, 102, 39);
+    cursor: pointer;
+}
+
+.blockMiniBat:hover {
+    background-image: url('https://fh.by/images/svg/like-hover.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  
+}
+
+.fotoLike {
+    width: 24px;
+    padding: 8px;
+}
