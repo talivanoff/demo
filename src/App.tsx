@@ -27,8 +27,15 @@ import Article from './components/article';
 import AlwaysAndEverywhere from './components/alwaysAndEverywhere';
 import Snowfall from 'react-snowfall';
 import Fhby from './components/fhby';
+import CatCardsHeader from './components/catCardsHeader';
+import CatCardsInput from './components/catCardsInput';
+import CatCardsButton from './components/catCardsButton';
+import CatCards from './components/catCards';
 
-
+interface MasProps {
+  url: string;
+  id: string;
+}
 const App = () => {
 
   
@@ -121,9 +128,52 @@ const App = () => {
   //    }
   //  ];
 
-    return (
+  const [mas, setMas] = useState<MasProps[]>([]);
+  const[numQuantity, setNumQuantity] = useState('');
+  const[isError, setIsError] = useState(false);
+
+  const fetchRequest = () => {
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=${numQuantity ? numQuantity : 10}`)
+              .then((data) => data.json())
+              .then((result) => {
+                  setMas(result)
+              });
+  }
+
+  const disableBut = (num: string) => {
+    if(+num > 0 || num === '') {
+        setIsError(false);
+      } else {
+        setIsError(true);
+    }
+  }
+
+  useEffect(() => {
+    fetchRequest();
+  }, []);
+
+  const quantity = (num: string) => {
+    setNumQuantity(num);
+    disableBut(num);
+  };
+ 
+  const requestServer = () => {
+    setNumQuantity('');
+    fetchRequest();
+  };
+
+  return (
         <div>
-          <Fhby />
+          <CatCardsHeader />
+          <div className={styles.inpBut}> 
+              <CatCardsInput num={quantity} value={numQuantity} isError={isError} />
+              <CatCardsButton request={requestServer} isDis={isError || numQuantity === ''} />
+           </div> 
+          <div className={styles.blockCards}> 
+              <CatCards masCards={mas} />
+          </div>
+          
+          {/* <Fhby /> */}
            {/* <Snowfall
               color="blue"
               snowflakeCount={2000}

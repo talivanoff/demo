@@ -1,0 +1,16 @@
+.inp {
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-right: 10px;
+}
+
+.inp:focus {
+    outline: none;
+    border-bottom: 2px solid slateblue;;
+}
+
+.inpError, .inpError:focus {
+    border-bottom: 2px solid red; 
+}

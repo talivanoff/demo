@@ -99,7 +99,7 @@
  } */
  
  
- .contein {
+.contein {
    display: flex;
    align-items: center;
    overflow-x: scroll;
@@ -107,4 +107,11 @@
    width: 100%;
    background-color: rgb(145, 221, 221);
    
+}
+
+.inpBut {
+   display: flex;
+   justify-content: center;
+   margin-right: 20px;
+   margin-bottom: 20px;
 }
