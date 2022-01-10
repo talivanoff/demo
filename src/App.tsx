@@ -31,11 +31,13 @@ import CatCardsHeader from './components/catCardsHeader';
 import CatCardsInput from './components/catCardsInput';
 import CatCardsButton from './components/catCardsButton';
 import CatCards from './components/catCards';
+import ModalComp from './components/modalComp';
 
-interface MasProps {
-  url: string;
-  id: string;
-}
+
+// interface MasProps {
+//   url: string;
+//   id: string;
+// }
 const App = () => {
 
   
@@ -128,50 +130,52 @@ const App = () => {
   //    }
   //  ];
 
-  const [mas, setMas] = useState<MasProps[]>([]);
-  const[numQuantity, setNumQuantity] = useState('');
-  const[isError, setIsError] = useState(false);
+  // const [mas, setMas] = useState<MasProps[]>([]);
+  // const[numQuantity, setNumQuantity] = useState('');
+  // const[isError, setIsError] = useState(false);
 
-  const fetchRequest = () => {
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=${numQuantity ? numQuantity : 10}`)
-              .then((data) => data.json())
-              .then((result) => {
-                  setMas(result)
-              });
-  }
+  // const fetchRequest = () => {
+  //   fetch(`https://api.thecatapi.com/v1/images/search?limit=${numQuantity ? numQuantity : 10}`)
+  //             .then((data) => data.json())
+  //             .then((result) => {
+  //                 setMas(result)
+  //             });
+  // }
 
-  const disableBut = (num: string) => {
-    if(+num > 0 || num === '') {
-        setIsError(false);
-      } else {
-        setIsError(true);
-    }
-  }
+  // const disableBut = (num: string) => {
+  //   if(+num > 0 || num === '') {
+  //       setIsError(false);
+  //     } else {
+  //       setIsError(true);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchRequest();
-  }, []);
+  // useEffect(() => {
+  //   fetchRequest();
+  // }, []);
 
-  const quantity = (num: string) => {
-    setNumQuantity(num);
-    disableBut(num);
-  };
+  // const quantity = (num: string) => {
+  //   setNumQuantity(num);
+  //   disableBut(num);
+  // };
  
-  const requestServer = () => {
-    setNumQuantity('');
-    fetchRequest();
-  };
+  // const requestServer = () => {
+  //   setNumQuantity('');
+  //   fetchRequest();
+  // };
 
   return (
         <div>
-          <CatCardsHeader />
+
+          <ModalComp />
+          {/* <CatCardsHeader />
           <div className={styles.inpBut}> 
               <CatCardsInput num={quantity} value={numQuantity} isError={isError} />
               <CatCardsButton request={requestServer} isDis={isError || numQuantity === ''} />
            </div> 
           <div className={styles.blockCards}> 
               <CatCards masCards={mas} />
-          </div>
+          </div> */}
           
           {/* <Fhby /> */}
            {/* <Snowfall
