@@ -2,6 +2,8 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import styles from './modal.module.css';
 import ReactDOM from 'react-dom';
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
 
 interface ModalProps {
     setIsVis: () => void;
@@ -15,7 +17,7 @@ const Modal = ({setIsVis}: ModalProps) => {
 
     return (
         <>
-            {ReactDOM.createPortal(
+            <DialogOverlay isOpen={true} >
                 <div className={styles.main} onClick={setIsVis}>
                     <div className={styles.modal} onClick={stopCloseModal}>
                         <div className={styles.blockWhite}>
@@ -34,9 +36,8 @@ const Modal = ({setIsVis}: ModalProps) => {
                             <img className={styles.images} src='https://humans.uz/static/bb4b46fd42e015e54f8c38ccc6900693/b8440/x2.webp'/>
                         </div>
                     </div>
-                </div>,
-                (document as any).getElementById('portalId')
-            )};
+                </div>
+            </DialogOverlay>
         </>
     )
 
