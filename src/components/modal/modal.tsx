@@ -37,7 +37,7 @@ const Modal = ({setIsVis}: ModalProps) => {
                         </div>
                     </div>
                 </div>
-            </DialogOverlay>
+            </DialogOverlay> 
         </>
     )
 
