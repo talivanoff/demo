@@ -75,17 +75,7 @@
     justify-content: center;
 }
 
-.btn {
-    background-color: rgb(223, 199, 199);
-    border-radius: 8px;
-    width: 170px;
-    height: 50px;
-    text-align: center;
-    border: none;
-    margin-top: 40px;
-    font-size: 15px; 
-    cursor: pointer;
-}
+
 
 .btnCloseBlock {
     position: absolute;
@@ -108,7 +98,6 @@
     cursor: pointer;
 }
 
-.btnDis {
-    background-color: rgb(71, 130, 238);
-}
+
+
 

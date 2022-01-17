@@ -19,6 +19,7 @@ const ModalComponent = () => {
             name,
             tel
         });
+        modalCloseAndTwoBat();
     };
     
     const handleClick = () => {
@@ -89,7 +90,6 @@ const ModalComponent = () => {
                 </div>}
             </div>
             {isVisModal && <ModalWindow setIsVis={modalClose}
-                                        setIsVisAndTwoBat={modalCloseAndTwoBat}
                                         dataBanner={data}  
                                         getData={getData} 
                                         />}

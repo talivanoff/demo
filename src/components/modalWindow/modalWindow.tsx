@@ -3,13 +3,12 @@ import { useState, useMemo } from 'react';
 import styles from './modalWindow.module.css';
 import {DialogOverlay} from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import clsx from 'clsx';
 import InputMask from 'react-input-mask';
+import ButSpinner from '../butSpinner';
 
 
 interface ModalProps {
     setIsVis: () => void;
-    setIsVisAndTwoBat: () => void;
     getData: (valTown: string, valAddress: string, valName: string, valTel: string) => void;
     dataBanner: {
         town: string,
@@ -19,7 +18,7 @@ interface ModalProps {
     }; 
 }
 
-const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalProps) => {
+const ModalWindow = ({setIsVis, getData, dataBanner }: ModalProps) => {
 
     const {town, house, name, tel} = dataBanner;
     const [valTown, setValTown] = useState(town);
@@ -28,7 +27,7 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
     const [valTel, setValtel] = useState(tel);
     const [isBirdie, setIsBirdie] = useState(false);
     const [isChek, setIsChek] = useState(false);
-
+   
     // const [isDis, setIsDis] = useState(true);
 
     // useEffect(()=> {
@@ -66,13 +65,12 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
         setIsChek(prev => !prev);
     };
 
-    const handleClickEnter = (e: any) => {
+    const handleClickEnter = () => {
         getData(valTown, valAddress, valName, valTel);
-        setIsVisAndTwoBat();
     };
 
     return (
-        <DialogOverlay isOpen={true} >
+        <DialogOverlay isOpen={true}>
             <div className={styles.main} onClick={setIsVis}>
                 <div className={styles.modal} onClick={stopCloseModal}>
                     <div className={styles.title}>Укажите адрес доставки</div>
@@ -88,7 +86,7 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
                     </div>
                     <div className={styles.checkBoxBlock}><input onClick={handleClickChecked} className={styles.checkBox} type="checkbox" checked = {isChek} /> Я гражданин Узбекистана </div> 
                     <div className={styles.btnBlock}>   
-                        <button onClick={handleClickEnter} className={clsx(styles.btn, !isDisable && styles.btnDis)} disabled = {isDisable} >Подтвердить</button>
+                        <ButSpinner buttonEnter={handleClickEnter} isDisable={isDisable} />
                     </div>
                     <div className={styles.btnCloseBlock}>   
                         <button onClick={() => setIsVis()} className={styles.btnСross}>
