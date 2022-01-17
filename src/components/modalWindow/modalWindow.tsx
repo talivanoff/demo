@@ -5,6 +5,8 @@ import {DialogOverlay} from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import clsx from 'clsx';
 import InputMask from 'react-input-mask';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Loader from 'react-loader-spinner';
 
 
 interface ModalProps {
@@ -28,6 +30,7 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
     const [valTel, setValtel] = useState(tel);
     const [isBirdie, setIsBirdie] = useState(false);
     const [isChek, setIsChek] = useState(false);
+    const [isLoader, setIsLoader] = useState(false);
 
     // const [isDis, setIsDis] = useState(true);
 
@@ -67,8 +70,12 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
     };
 
     const handleClickEnter = (e: any) => {
-        getData(valTown, valAddress, valName, valTel);
-        setIsVisAndTwoBat();
+        setIsLoader(true);
+        setTimeout(() => {
+            getData(valTown, valAddress, valName, valTel);
+            setIsVisAndTwoBat();
+            setIsLoader(false);
+        }, 2000);
     };
 
     return (
@@ -88,7 +95,10 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
                     </div>
                     <div className={styles.checkBoxBlock}><input onClick={handleClickChecked} className={styles.checkBox} type="checkbox" checked = {isChek} /> Я гражданин Узбекистана </div> 
                     <div className={styles.btnBlock}>   
-                        <button onClick={handleClickEnter} className={clsx(styles.btn, !isDisable && styles.btnDis)} disabled = {isDisable} >Подтвердить</button>
+                        <button onClick={handleClickEnter} className={clsx(styles.btn, !isDisable && styles.btnDis)} disabled = {isDisable}>
+                            {isLoader && <Loader type="Audio" color="#FFF" height={25} width={25} />}
+                            <span>Подтвердить</span>
+                        </button>
                     </div>
                     <div className={styles.btnCloseBlock}>   
                         <button onClick={() => setIsVis()} className={styles.btnСross}>
