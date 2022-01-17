@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './modalComponent.module.css';
 import ModalWindow from '../modalWindow';
+import React from 'react';
 
 const ModalComponent = () => {
     
@@ -9,7 +10,6 @@ const ModalComponent = () => {
     const [isFinish, setIsFinish] = useState(false); 
     const [isDataFilled, setIsDataFilled] = useState(false);
     const [data, setData] = useState(defaultData);
-
     const {town, house, name, tel} = data;
     
     const getData = (town: string, house: string, name: string, tel: string) => {

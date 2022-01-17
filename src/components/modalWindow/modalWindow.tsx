@@ -1,8 +1,11 @@
+import React from 'react';
 import { useState, useMemo } from 'react';
 import styles from './modalWindow.module.css';
 import {DialogOverlay} from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import clsx from 'clsx';
+import InputMask from 'react-input-mask';
+
 
 interface ModalProps {
     setIsVis: () => void;
@@ -12,14 +15,13 @@ interface ModalProps {
         town: string,
         house: string,
         name: string,
-        tel: string
+        tel: string      
     }; 
 }
 
 const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalProps) => {
 
     const {town, house, name, tel} = dataBanner;
-
     const [valTown, setValTown] = useState(town);
     const [valAddress, setValAddress] = useState(house);
     const [valName, setValName] = useState(name);
@@ -53,7 +55,7 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
     };
     const handleChangeTel = (e: any) => {
         setValtel(e.target.value);  
-        if(e.target.value.length > 7) { 
+        if(!e.target.value.includes('_')) { 
             setIsBirdie(true);
         } else {
             setIsBirdie(false);
@@ -80,9 +82,9 @@ const ModalWindow = ({setIsVis,setIsVisAndTwoBat, getData, dataBanner }: ModalPr
                         <input onChange={handleChangeName} className={styles.inp} placeholder='Фамилия и Имя' value={valName} />
                         <div className={styles.textTel}>Телефон для связи</div>
                         <div className={styles.blockTel}>
-                            <input onChange={handleChangeTel} className={styles.inp} value={valTel} />
-                            {isBirdie && <img className={styles.imageBirdie} src='https://cdn.icon-icons.com/icons2/472/PNG/48/checkmark-48_44856.png'/>}
-                        </div> 
+                            <InputMask mask='+375(99) 999-99-99' placeholder='+375(__) ___-__-__' onChange={handleChangeTel} className={styles.inp} value={valTel}></InputMask>
+                            {isBirdie && <img className={styles.imageBirdie} src='https://img.icons8.com/ios-glyphs/2x/checkmark.png'/>}
+                        </div>  
                     </div>
                     <div className={styles.checkBoxBlock}><input onClick={handleClickChecked} className={styles.checkBox} type="checkbox" checked = {isChek} /> Я гражданин Узбекистана </div> 
                     <div className={styles.btnBlock}>   

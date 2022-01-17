@@ -1,4 +1,5 @@
 import Input from './components/input';
+import React from 'react';
 import Card from './components/card';
 import clsx from 'clsx';
 import styles from './App.module.css';
@@ -167,7 +168,6 @@ const App = () => {
 
   return (
         <div>
-
           <ModalComponent />
           {/* <CatCardsHeader />
           <div className={styles.inpBut}> 
