@@ -34,6 +34,7 @@ import CatCardsButton from './components/catCardsButton';
 import CatCards from './components/catCards';
 import ModalComp from './components/modalComp';
 import ModalComponent from './components/modalComponent';
+import Figures from './components/figures';
 
 
 // interface MasProps {
@@ -168,7 +169,8 @@ const App = () => {
 
   return (
         <div>
-          <ModalComponent />
+          <Figures />
+          {/* <ModalComponent /> */}
           {/* <CatCardsHeader />
           <div className={styles.inpBut}> 
               <CatCardsInput num={quantity} value={numQuantity} isError={isError} />

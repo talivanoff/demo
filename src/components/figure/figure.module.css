@@ -1,0 +1,48 @@
+:root {
+    --figure-width: 150px;
+    --figure-height: 150px;
+}
+
+.figure {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.small {
+    width: var(--figure-width);
+    height: var(--figure-height);
+}
+
+.medium {
+    width: calc(var(--figure-width) * 2);
+    height: calc(var(--figure-height) * 2);
+}
+
+.large {
+    width: calc(var(--figure-width) * 3);
+    height: calc(var(--figure-height) * 3);
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.square {
+}
+
+.rectangle {
+    transform: scaleX(1.5);
+}
+
+.unVisible {
+    animation: shake 3s ease-in-out forwards;
+}
+
+@keyframes shake {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.1;
+    }
+}
