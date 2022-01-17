@@ -1,0 +1,114 @@
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    width: 900;
+    height: 700;
+    display: flex;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    margin: 20px;
+}
+
+.blockInp {
+    display: flex;
+    flex-direction: column;
+}
+
+.inp {
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    background-color: wheat;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* .inp2 {
+    margin-bottom: 15px;
+    outline: none;
+    background: wheat url('https://cdn.icon-icons.com/icons2/472/PNG/48/checkmark-48_44856.png') 100px 1px no-repeat;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+} */
+
+.textTel {
+    margin-left: 15px;
+    color: gray;
+}
+
+.imageBirdie {
+    width: 15px;
+   margin-left: -20px;
+}
+
+.checkBoxBlock {
+    margin-bottom: 15px;
+}
+
+.checkBox {
+    width: 20px;
+}
+
+.btnBlock {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: rgb(223, 199, 199);
+    border-radius: 8px;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    margin-top: 40px;
+    font-size: 15px; 
+    cursor: pointer;
+}
+
+.btnCloseBlock {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.btnСross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(105, 6, 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btnDis {
+    background-color: rgb(71, 130, 238);
+}
+
