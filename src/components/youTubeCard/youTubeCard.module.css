@@ -1,0 +1,100 @@
+.card {
+    width: 270px;
+    height: 300px;
+    margin: 10px;
+    background-color: white;
+    position: relative;
+}
+
+.cardHover {
+    height: 368px;
+    transition-duration: 0.5s;
+    transform: scale(1.3);
+    z-index: 9999;
+    
+}
+
+.imagesBig {
+    width: 270px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.content {
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.imagesSmoll {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.iсon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.bottomText {
+    margin-left: 50px;
+}
+
+.text {
+    color: gray;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.buttons {
+    margin: 5px;
+   
+}
+
+.butBlock {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(238, 223, 223);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.iсonBut {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.textBut {
+    font-size: 20px;
+}
+
+.list {
+    position: absolute;
+    left: 90%;
+    top: 65%;
+    width: 260px;
+    height: 250px;
+    padding: 20px;
+    background-color: khaki;
+    z-index: 9999;
+}
+
+.listHover {
+    top: 53%;
+}
+
+.spanText {
+    font-size: 20px;
+    margin: 10px;
+}
