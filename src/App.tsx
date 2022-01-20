@@ -35,6 +35,7 @@ import CatCards from './components/catCards';
 import ModalComp from './components/modalComp';
 import ModalComponent from './components/modalComponent';
 import BlockFigures from './components/blockFigures';
+import YouTubeComp from './components/youTubeComp';
 
 // interface MasProps {
 //   url: string;
@@ -168,7 +169,8 @@ const App = () => {
 
   return (
         <div>
-          <BlockFigures />
+          <YouTubeComp />
+          {/* <BlockFigures /> */}
           {/* <ModalComponent /> */}
           {/* <CatCardsHeader />
           <div className={styles.inpBut}> 
