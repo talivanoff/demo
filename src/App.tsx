@@ -36,6 +36,7 @@ import ModalComp from './components/modalComp';
 import ModalComponent from './components/modalComponent';
 import BlockFigures from './components/blockFigures';
 import YouTubeComp from './components/youTubeComp';
+import BlockIcons from './components/blockIcons';
 
 // interface MasProps {
 //   url: string;
@@ -169,7 +170,8 @@ const App = () => {
 
   return (
         <div>
-          <YouTubeComp />
+          <BlockIcons />
+          {/* <YouTubeComp /> */}
           {/* <BlockFigures /> */}
           {/* <ModalComponent /> */}
           {/* <CatCardsHeader />

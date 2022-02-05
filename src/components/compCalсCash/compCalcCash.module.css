@@ -1,0 +1,26 @@
+.iconsBlock {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90px;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    margin: 7px 10px;
+    cursor: pointer;
+}
+
+.iconName {
+    font-size: 15px;
+    text-align: center;
+}
+
+.iconOk {
+    position: absolute;
+    left: 75%;
+    top: 5%;
+    width: 30px;
+    height: 30px;
+}
